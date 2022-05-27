@@ -1,0 +1,25 @@
+body {
+    background-color: antiquewhite;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+form {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+}
+
+label {
+    color: black;
+    height: 20px;
+    width: 50px
+}
+
+button {
+    border: 1px solid black;
+    width: 100px;
+    height:20px
+
+}
