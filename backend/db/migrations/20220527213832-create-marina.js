@@ -14,7 +14,7 @@ module.exports = {
         unique: true
       },
       state: {
-        type: Sequelize.STRING(2)
+        type: Sequelize.STRING(20)
       },
       country: {
         type: Sequelize.STRING(20)
