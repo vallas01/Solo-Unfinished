@@ -9,7 +9,7 @@ module.exports = {
 
     return queryInterface.bulkInsert('Marinas', [
       {
-      userId: 1,
+      user_id: 1,
       name: 'Delray Harbour Club Marina',
       state: 'FL',
       country: 'USA',
@@ -21,7 +21,7 @@ module.exports = {
       updatedAt: new Date()
       },
       {
-        userId: 2,
+        user_id: 2,
         name: 'Bonefish Marina',
         state: 'FL',
         country: 'USA',
@@ -33,7 +33,7 @@ module.exports = {
         updatedAt: new Date()
         },
       {
-        userId: 3,
+        user_id: 3,
         name: 'Waikiki Yacht Club',
         state: 'HA',
         country: 'USA',
@@ -45,29 +45,29 @@ module.exports = {
         updatedAt: new Date()
         },
       {
-        userId: 4,
+        user_id: 4,
         name: 'The Yacht Club of Hilton Head',
         state: 'SC',
         country: 'USA',
         cost: 2.85,
         latitude: 32.17739,
         longitude: -80.77239,
-        imagePath: "https://s3.amazonaws.com/images.charitybuzz.com/images/294045/original.jpeg?1493215857",
+        imagePath: "https://upscalelivingmag-com-images.s3.us-east-1.amazonaws.com/wp-content/uploads/2021/03/sailboat-racing.jpg",
         createdAt: new Date(),
         updatedAt: new Date()
         },
         {
-          userId: 5,
+          user_id: 5,
           name: 'Grand Bahama Yacht Club',
           state: 'Grand Bahama',
           country: 'Bahamas',
           cost: 2.85,
           latitude: 26.51814,
           longitude: -78.63648,
-          imagePath: "https://duckduckgo.com/?q=grand+bahama+yacht+club+superyacht&atb=v314-1&iar=images&iax=images&ia=images&iai=https%3A%2F%2Fres.cloudinary.com%2Fdockwa%2Fimage%2Fupload%2Fc_scale%2Cw_800%2Fv1%2Fmarinas%2Fgrandbahamayachtclub%2Fil-lussuoso-grand-bahama-yacht-club.png",
+          imagePath: "https://res.cloudinary.com/dockwa/image/upload/c_scale,w_800/v1/marinas/grandbahamayachtclub/GBI_0470.png",
           createdAt: new Date(),
           updatedAt: new Date()
-          },
+          }
     ], {});
   },
 
