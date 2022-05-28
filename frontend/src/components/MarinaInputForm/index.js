@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import * as sessionActions from '../../store/session';
+// import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
+import { addMarina} from '../../store/marinaReducer'
 import './MarinaInputForm.css';
 
 function MarinaInputForm() {
@@ -52,26 +53,77 @@ function MarinaInputForm() {
     <div className='inputBox'>
         <h1>Add a Marina</h1>
         <form onSubmit={handleSubmit}>
-        
+
         <label>
-            Username or Email
+            Marina Name
             <input
             type="text"
-            value={credential}
-            onChange={(e) => setCredential(e.target.value)}
+            name='name'
+            placeholder='Marina'
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             required
             />
         </label>
         <label>
-            Password
+            State
             <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            type="text"
+            name='state'
+            placeholder='Florida'
+            value={state}
+            onChange={(e) => setState(e.target.value)}
             required
             />
         </label>
-        <button type="submit">Log In</button>
+        <label>
+            Country
+            <input
+            type="text"
+            name='country'
+            placeholder='USA'
+            value={country}
+            onChange={(e) => setCountry(e.target.value)}
+            required
+            />
+        </label>
+        <label>
+            Slip Cost per Foot
+            <input
+            type="integer"
+            name='cost'
+            placeholder=''
+            value={cost}
+            onChange={(e) => setCost(e.target.value)}
+            required
+            />
+        </label>
+        <div className='coordinatesBox'>
+            <h2>Coodinates</h2>
+            <label>
+                Latitude
+                <input
+                type="integer"
+                name='latitude'
+                placeholder=''
+                value={latitude}
+                onChange={(e) => setLatitude(e.target.value)}
+                required
+                />
+            </label>
+            <label>
+                Longitude
+                <input
+                type="integer"
+                name='longitude'
+                placeholder=''
+                value={longitude}
+                onChange={(e) => setLongitude(e.target.value)}
+                required
+                />
+            </label>
+        </div>
+        <button type="submit">Submit</button>
         </form>
     </div>
   );
