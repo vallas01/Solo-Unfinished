@@ -7,6 +7,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import MarinaInputForm from "./components/MarinaInputForm";
 import MarinaPage from "./components/MarinaPage"
+import BrowseMarinas from "./components/BrowseMarinas"
 
 function App() {
   const dispatch = useDispatch();
@@ -26,10 +27,13 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/marinas" exact>
+          <Route exact path="/marinas">
+            <BrowseMarinas />
+          </Route>
+          <Route exact path="/marinas/new">
             <MarinaInputForm />
           </Route>
-          <Route path={["/marinas/:marinaId"]}>
+          <Route path="/marinas/:marinaId">
             <MarinaPage />
           </Route>
 
