@@ -1,4 +1,4 @@
-import marinas from '../data/data.json';
+// import marinas from '../data/data.json';
 
 /*-------- TYPES -------*/
 export const LOAD_MARINAS = 'marina/loadMarinas';
@@ -54,7 +54,7 @@ export const addMarina = (marina) => async (dispatch) =>{
     })
     if(response.ok){
         const marina = await response.json();
-        dispatch(create(marina));
+        dispatch(add(marina));
         return marina;
     }
 }

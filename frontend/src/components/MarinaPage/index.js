@@ -5,20 +5,21 @@ import { Redirect } from 'react-router-dom';
 import './MarinaPage.css';
 import { loadMarinas } from '../../store/marinaReducer'
 
-function BusinessPage() {
+function MarinaPage() {
     const dispatch = useDispatch();
     const marinas = useSelector((state) => Object.values(state.marina));
 
     useEffect(() => {
         dispatch(loadMarinas());
     }, [dispatch])
-
+ 
     return (
+
         <div className='marinaBlock'>
             <h1>Marinas</h1>
             <div>
 
-                {marinas.map(marina => {
+                {/* {marinas.map(marina => {
                     return (
                         <div key={`div${marina.id}`}className={`div${marina.id}`}>
 
@@ -33,11 +34,11 @@ function BusinessPage() {
                         </div>
 
                     )
-                })}
+                })} */}
 
             </div>
         </div>
     )
 }
 
-export default BusinessPage;
+export default MarinaPage;
