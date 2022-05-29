@@ -23,7 +23,7 @@ const removeMarina = id => ({
   type: REMOVE_MARINA,
   id
 });
-const updateMarina = updatedMarina => ({
+const editMarinas = updatedMarina => ({
   type: UPDATE_MARINA,
   updatedMarina
 });
@@ -66,7 +66,7 @@ export const updateMarinaDetails = (marinaDetails) => async dispatch => {
   })
   if(response.ok){
     const updatedMarina = await response.json()
-    dispatch(updateMarina(updatedMarina))
+    dispatch(editMarinas(updatedMarina))
     return updatedMarina;
   }
 };
@@ -90,7 +90,7 @@ const initialState = {list:[], currentMarina:[]};
 
 const marinaReducer = (state = initialState, action) => {
   let newState;
-  
+
   switch (action.type) {
 
     case LIST_MARINAS: {
@@ -102,12 +102,50 @@ const marinaReducer = (state = initialState, action) => {
       return newState;
     }
 
-    case ADD_MARINA:
-      return { ...state, entries: [...state.entries, action.marina] };
+    case LIST_1_MARINA: {
+      newState = {...state}
+      newState.currentMarina = action.details
+      return newState
+    }
+
+
+    case UPDATE_MARINA: {
+      newState = {...state};
+      const marinaToUpdate = newState.list.find((marina) => marina.id === action.updatedMarina.id)
+
+      newState.list.map(marina => {
+          if (marina.id === marinaToUpdate.id) {
+              return marina = action.updatedMarinas
+          } else {
+              return marina
+          }
+      });
+      return newState
+    }
+
+    case ADD_MARINA: {
+      newState = {...state};
+      newState.list.push(action.details)
+      return newState;
+    }
+
+    case REMOVE_MARINA: {
+      newState = {...state}
+      let newMarinaList = newState.list.map(marina => {
+          if (marina.id !== action.details.id) {
+              return marina;
+          }
+          return null;
+      });
+      newState = {list: newMarinaList}
+      return newState
+    }
 
     default:
       return state;
+
   }
+
 };
 
 export default marinaReducer;
