@@ -1,19 +1,26 @@
-// import { useEffect  } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { Link } from 'react-router-dom';
-// import { listOfAllBusinesses } from '../../store/businesses';
-// import { Footer } from '../Footer';
-// import './BrowseBusiness.css'
+import { useEffect  } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { listAllMarinas } from '../../store/marinaReducer';
+import './BrowseBusiness.css'
 
 
 
-// export const BrowseBusinesses = () => {
+export const BrowseMarinas = () => {
 
-//     const dispatch = useDispatch();
-//     const listOfBusinesses = useSelector(state => {
-//         return state.businesses.list
-//     });
+    const dispatch = useDispatch();
+    const listAllMarinas = useSelector(state => {
+        return state.marinas.list
+    });
 
-//     useEffect(() => {
-//         dispatch(listOfAllBusinesses())
-//     }, [dispatch]);
+    useEffect(() => {
+        dispatch(listAllMairas())
+    }, [dispatch]);
+
+    return (
+        <div>
+            <h1>MARINA LIST</h1>
+        </div>
+    );
+
+}
