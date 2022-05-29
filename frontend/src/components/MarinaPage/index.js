@@ -1,44 +1,44 @@
-import React, { useState, useEffect } from 'react';
-import * as sessionActions from '../../store/session';
-import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
-import './MarinaPage.css';
-import { loadMarinas } from '../../store/marinaReducer'
+// import React, { useState, useEffect } from 'react';
+// import * as sessionActions from '../../store/session';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { Redirect } from 'react-router-dom';
+// import './MarinaPage.css';
+// import { listAllMarinas } from '../../store/marinaReducer'
 
-function MarinaPage() {
-    const dispatch = useDispatch();
-    const marinas = useSelector((state) => Object.values(state.marina));
+// function MarinaPage() {
+//     const dispatch = useDispatch();
+//     const marinas = useSelector((state) => Object.values(state.marina));
 
-    useEffect(() => {
-        dispatch(loadMarinas());
-    }, [dispatch])
- 
-    return (
+//     useEffect(() => {
+//         dispatch(listAllMarinas());
+//     }, [dispatch])
 
-        <div className='marinaBlock'>
-            <h1>Marinas</h1>
-            <div>
+//     return (
 
-                {/* {marinas.map(marina => {
-                    return (
-                        <div key={`div${marina.id}`}className={`div${marina.id}`}>
+//         <div className='marinaBlock'>
+//             <h1>Marinas</h1>
+//             <div>
 
-                        <img key={`image${marina.id}`} src={marina.imagePath} />
-                        <h2>Restaurant Name</h2>
-                        <ul className='businessTitle' key={`title${marina.id}`}>{marina.name}</ul>
-                        <h2>Description</h2>
-                        <li key={`description${marina.id}`}>
-                            {marina.longitude}
-                        </li>
+//                 {/* {marinas.map(marina => {
+//                     return (
+//                         <div key={`div${marina.id}`}className={`div${marina.id}`}>
 
-                        </div>
+//                         <img key={`image${marina.id}`} src={marina.imagePath} />
+//                         <h2>Restaurant Name</h2>
+//                         <ul className='businessTitle' key={`title${marina.id}`}>{marina.name}</ul>
+//                         <h2>Description</h2>
+//                         <li key={`description${marina.id}`}>
+//                             {marina.longitude}
+//                         </li>
 
-                    )
-                })} */}
+//                         </div>
 
-            </div>
-        </div>
-    )
-}
+//                     )
+//                 })} */}
 
-export default MarinaPage;
+//             </div>
+//         </div>
+//     )
+// }
+
+// export default MarinaPage;

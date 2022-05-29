@@ -36,6 +36,7 @@ export const listAllMarinas = () => async (dispatch) => {
         const list = await response.json();
         dispatch(listMarinas(list));
     }
+    console.log(`response: ${response.data}`)
 };
 
 export const getOneMarina = (marinaId) => async (dispatch) =>{

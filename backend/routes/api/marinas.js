@@ -31,15 +31,9 @@ const validateSignup = [
 
 // Get all the marinas
 router.get('/', asyncHandler(async (req, res) => {
-    const { token } = req.cookies;
-    console.log(token);
-
-    const business = await Marina.findAll({ order: [['id', 'ASC']] })
-
-    return res.json({ marina })
-})
-
-)
+    const marinas = await Marina.findAll();
+    return res.json(marinas)
+}));
 
 router.post(
     '/',

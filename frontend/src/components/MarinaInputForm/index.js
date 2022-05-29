@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 // import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 // import { Redirect } from 'react-router-dom';
-import { addMarina} from '../../store/marinaReducer'
+import { createMarina} from '../../store/marinaReducer'
 import './MarinaInputForm.css';
 
 function MarinaInputForm() {
+    // eslint-disable-next-line
   const sessionUser = useSelector(state => state.session.user);
 
   const [name, setName] = useState('');
@@ -35,7 +36,7 @@ function MarinaInputForm() {
         latitude,
         imagePath
     };
-    dispatch(addMarina(newMarina));
+    dispatch(createMarina(newMarina));
     reset();
   };
 

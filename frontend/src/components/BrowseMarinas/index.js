@@ -1,12 +1,13 @@
 import { useEffect  } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+// eslint-disable-next-line
 import { listAllMarinas } from '../../store/marinaReducer';
-import './BrowseBusiness.css'
+import './BrowseMarinas.css';
 
 
 
-export const BrowseMarinas = () => {
+const BrowseMarinas = () => {
 
     const dispatch = useDispatch();
     const listAllMarinas = useSelector(state => {
@@ -14,9 +15,11 @@ export const BrowseMarinas = () => {
     });
 
     useEffect(() => {
-        dispatch(listAllMairas())
-    }, [dispatch]);
+        dispatch(listAllMarinas())
+    });                         //  , [dispatch] <=add this back
 
+
+console.log("test")
     return (
         <div>
             <h1>MARINA LIST</h1>
@@ -24,3 +27,5 @@ export const BrowseMarinas = () => {
     );
 
 }
+
+export default BrowseMarinas;
