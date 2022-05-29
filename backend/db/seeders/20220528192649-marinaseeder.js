@@ -9,7 +9,7 @@ module.exports = {
 
     return queryInterface.bulkInsert('Marinas', [
       {
-      user_id: 1,
+      user_id: 5,
       name: 'Delray Harbour Club Marina',
       state: 'FL',
       country: 'USA',
@@ -21,7 +21,7 @@ module.exports = {
       updatedAt: new Date()
       },
       {
-        user_id: 2,
+        user_id: 5,
         name: 'Bonefish Marina',
         state: 'FL',
         country: 'USA',
@@ -33,7 +33,7 @@ module.exports = {
         updatedAt: new Date()
         },
       {
-        user_id: 3,
+        user_id: 5,
         name: 'Waikiki Yacht Club',
         state: 'HA',
         country: 'USA',
@@ -45,7 +45,7 @@ module.exports = {
         updatedAt: new Date()
         },
       {
-        user_id: 4,
+        user_id: 5,
         name: 'The Yacht Club of Hilton Head',
         state: 'SC',
         country: 'USA',
