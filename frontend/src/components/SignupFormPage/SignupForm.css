@@ -1,9 +1,21 @@
-form, #container, div {
-  width: 350px;
-  border-left: 100px;
+.container {
+  display: flex;
+  justify-content: center;
 }
 
-#signup-form {
+.cell {
+  height: 30px;
+  width: 300px;
+  padding: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: none;
+  border-radius: 4px;
+}
+
+
+
+.signup-form {
   min-height: 20px;
   width: 350px;
   padding: 19px;
@@ -13,7 +25,7 @@ form, #container, div {
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
   button{
@@ -22,8 +34,7 @@ form, #container, div {
     background-color: #40d9ac;
     width: 300px;
     height: 60px;
-    margin: 24px 0px 0px;
-    padding: 14px;
+    margin: 24px;
     font-size: 20px;
     letter-spacing: 1px;
 }
