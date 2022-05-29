@@ -1,13 +1,8 @@
 'use strict';
 
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-    /*
-      Add altering commands here.
-      Return a promise to correctly handle asynchronicity.
-    */
-
-    return queryInterface.bulkInsert('Marinas', [
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.bulkInsert('Marinas', [
       {
       user_id: 5,
       name: 'Delray Harbour Club Marina',
@@ -71,12 +66,7 @@ module.exports = {
     ], {});
   },
 
-  down: (queryInterface, Sequelize) => {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-    */
-
-    return queryInterface.bulkDelete('Marinas', null, {});
+  down: async (queryInterface, Sequelize) => {
+    return await queryInterface.bulkDelete('Marinas', null, {});
   }
 };
