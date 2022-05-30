@@ -63,10 +63,10 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date()
           }
-    ], {});
+    ]);
   },
 
   down: async (queryInterface, Sequelize) => {
-    return await queryInterface.bulkDelete('Marinas', null, {});
+    return await queryInterface.bulkDelete('Marinas');
   }
 };
