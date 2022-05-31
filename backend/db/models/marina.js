@@ -12,7 +12,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Marina.associate = function(models) {
     // associations can be defined here
-    Marina.hasOne(models.User,{foreignKey:'user_id'})
+    Marina.belongsTo(models.User,{foreignKey:'owner_id'})
+    Marina.hasMany(models.Booking,{foreignKey:'marina_id'})
   };
   return Marina;
 };

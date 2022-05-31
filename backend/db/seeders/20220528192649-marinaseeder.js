@@ -4,7 +4,7 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.bulkInsert('Marinas', [
       {
-      user_id: 5,
+      owner_id: 2,
       name: 'Delray Harbour Club Marina',
       state: 'FL',
       country: 'USA',
@@ -16,7 +16,7 @@ module.exports = {
       updatedAt: new Date()
       },
       {
-        user_id: 5,
+        owner_id: 2,
         name: 'Bonefish Marina',
         state: 'FL',
         country: 'USA',
@@ -28,7 +28,7 @@ module.exports = {
         updatedAt: new Date()
         },
       {
-        user_id: 5,
+        owner_id: 2,
         name: 'Waikiki Yacht Club',
         state: 'HA',
         country: 'USA',
@@ -40,7 +40,7 @@ module.exports = {
         updatedAt: new Date()
         },
       {
-        user_id: 5,
+        owner_id: 2,
         name: 'The Yacht Club of Hilton Head',
         state: 'SC',
         country: 'USA',
@@ -52,7 +52,7 @@ module.exports = {
         updatedAt: new Date()
         },
         {
-          user_id: 5,
+          owner_id: 2,
           name: 'Grand Bahama Yacht Club',
           state: 'Grand Bahama',
           country: 'Bahamas',
