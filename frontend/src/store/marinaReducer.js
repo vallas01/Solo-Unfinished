@@ -19,6 +19,7 @@ const addMarinas = details => ({
   type: ADD_MARINA,
   details
 })
+//eslint-disable-next-line
 const removeMarina = id => ({
   type: REMOVE_MARINA,
   id
@@ -30,7 +31,7 @@ const editMarinas = updatedMarina => ({
 
 /*-------- SELECTORS -------*/
 
-export const listAllMarinas = () => async (dispatch) => {
+export const getMarinas = () => async (dispatch) => {
     const response = await csrfFetch(`/api/marinas`);
     if (response.ok) {
         const list = await response.json();
@@ -79,7 +80,7 @@ export const deleteMarina = (marinaId) => async dispatch => {
   })
   if(response.ok){
       const allMarinas = await response.json();
-      dispatch(listAllMarinas(allMarinas));
+      dispatch(getMarinas(allMarinas));
       return 'marina deleted';
   }
 };
