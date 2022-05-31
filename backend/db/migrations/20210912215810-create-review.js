@@ -1,31 +1,30 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Bookings', {
+    return queryInterface.createTable('Reviews', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      user_id: {
-        type: Sequelize.INTEGER,
+      userId: {
         allowNull: false,
-        references: {model: 'Users'}
-      },
-      marina_id: {
         type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {model: 'Marinas' }
+        references: { model: 'Users' }
       },
-      totalCost: {
+      businessId: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: { model: 'Businesses' }
+      },
+      rating: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
-      startDate: {
-        type: Sequelize.DATE
-      },
-      endDate: {
-        type: Sequelize.DATE
+      content: {
+        allowNull: false,
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,
@@ -38,6 +37,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Bookings');
+    return queryInterface.dropTable('Reviews');
   }
 };
