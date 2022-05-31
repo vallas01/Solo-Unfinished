@@ -22,7 +22,7 @@ module.exports = {
         country: 'USA',
         cost: 2.75,
         latitude: 24.725,
-        longitude: -81.01209,
+        longitude: -81.01208,
         imagePath: "https://img.marinas.com/v2/cf91105d12bfbf4ae0b927be1116f0249c308c14a2fdc4086f1e463058d09852.jpg",
         createdAt: new Date(),
         updatedAt: new Date()
