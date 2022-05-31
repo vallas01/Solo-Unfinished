@@ -88,7 +88,7 @@ export const deleteMarina = (marinaId) => async dispatch => {
 
 
 /*-------- REDUCER -------*/
-const initialState = {list:[], currentMarina:[]};
+const initialState = {};
 
 const marinaReducer = (state = initialState, action) => {
   let newState;
@@ -96,12 +96,9 @@ const marinaReducer = (state = initialState, action) => {
   switch (action.type) {
 
     case LIST_MARINAS: {
-      const allMarinas = action.list;
-      newState = {
-        list: allMarinas,
-        currentMarina:[]
-      }
-      return newState;
+      newState={...state}
+      action.list.forEach(marina=>newState[marina.id]=marina)
+      return newState
     }
 
     case LIST_1_MARINA: {
