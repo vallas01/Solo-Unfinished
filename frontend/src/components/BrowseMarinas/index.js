@@ -24,12 +24,15 @@ const BrowseMarinas = () => {
     return (
         <div>
             <h1>MARINA LIST</h1>
+            <ul>
             {Object.values(marina).map((marina)=>{
                 return(
-                    <h2>{marina.title}</h2>
+                    <li key={marina.id}>
+                        <h2>{marina.title}</h2>
+                    </li>
                 )
             })}
-
+            </ul>
 
             {/* <div className="add-business-btn-container">
                         <Link to='/addmarinas/new'>
