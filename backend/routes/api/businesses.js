@@ -35,7 +35,7 @@ router.get('/', asyncHandler(async function(req, res) {
 //     const {
 //         id,
 //         ownerId,
-//         title,
+//         name,
 //         imgUrl,
 //         category,
 //         description,
@@ -49,7 +49,7 @@ router.get('/', asyncHandler(async function(req, res) {
 //     await businessToEdit.update({
 //         id: id,
 //         ownerId: ownerId,
-//         title: title,
+//         name: name,
 //         imgUrl: imgUrl,
 //         category: category,
 //         description: description,
