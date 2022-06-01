@@ -18,8 +18,9 @@ router.get('/', asyncHandler(async function(req, res) {
 // create a marina
 router.post('/', asyncHandler(async function(req, res) {
     const newMarina = await Business.create(req.body);
-    console.log('BACKEND POST AFTER ADD TO DB',newMarina)
+    console.log('***********BACKEND POST AFTER ADD TO DB************',newMarina);
     return res.json(newMarina)
+    // return res.redirect(`/api/marinas/${newMarina.id}`)
 }));
 
 
