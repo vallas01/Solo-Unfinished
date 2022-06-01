@@ -29,6 +29,7 @@ const BrowseMarinas = () => {
                 return(
                     <li key={marina.id}>
                         <h2>{marina.title}</h2>
+                        <img src={marina.imgUrl} alt='marina'/>
                     </li>
                 )
             })}
