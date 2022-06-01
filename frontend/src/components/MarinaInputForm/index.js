@@ -51,56 +51,64 @@ function MarinaInputForm() {
   }
 
   return (
-    <div className='inputBox'>
-        <h1>Add a Marina</h1>
+    <div className='container'>
+        <div>
+            <h1>Add a Marina</h1>
+        </div>
         <form onSubmit={handleSubmit}>
-
-        <label>
-            Marina Name
-            <input
-            type="text"
-            name='name'
-            placeholder='Marina'
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-            />
-        </label>
-        <label>
-            State
-            <input
-            type="text"
-            name='state'
-            placeholder='Florida'
-            value={state}
-            onChange={(e) => setState(e.target.value)}
-            required
-            />
-        </label>
-        <label>
-            Country
-            <input
-            type="text"
-            name='country'
-            placeholder='USA'
-            value={country}
-            onChange={(e) => setCountry(e.target.value)}
-            required
-            />
-        </label>
-        <label>
-            Slip Cost per Foot
-            <input
-            type="integer"
-            name='cost'
-            placeholder=''
-            value={cost}
-            onChange={(e) => setCost(e.target.value)}
-            required
-            />
-        </label>
-        <div className='coordinatesBox'>
-            <h2>Coodinates</h2>
+        <div className='cell'>
+            <label>
+                Marina Name
+                <input
+                type="text"
+                name='name'
+                placeholder='Marina'
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                />
+            </label>
+        </div>
+        <div className='cell'>
+            <label>
+                State
+                <input
+                type="text"
+                name='state'
+                placeholder='Florida'
+                value={state}
+                onChange={(e) => setState(e.target.value)}
+                required
+                />
+            </label>
+        </div>
+        <div className='cell'>
+            <label>
+                Country
+                <input
+                type="text"
+                name='country'
+                placeholder='USA'
+                value={country}
+                onChange={(e) => setCountry(e.target.value)}
+                required
+                />
+            </label>
+        </div>
+        <div className='cell'>
+            <label>
+                Slip Cost per Foot
+                <input
+                type="integer"
+                name='cost'
+                placeholder=''
+                value={cost}
+                onChange={(e) => setCost(e.target.value)}
+                required
+                />
+            </label>
+        </div>
+        <div className='cell'>
             <label>
                 Latitude
                 <input
@@ -112,6 +120,8 @@ function MarinaInputForm() {
                 required
                 />
             </label>
+        </div>
+        <div className='cell'>
             <label>
                 Longitude
                 <input
