@@ -93,6 +93,7 @@ const initialState = {};
 const marinaReducer = (state = initialState, action) => {
   let newState;
 
+
   switch (action.type) {
 
     case LIST_MARINAS: {
@@ -100,10 +101,10 @@ const marinaReducer = (state = initialState, action) => {
       action.list.forEach(marina=>newState[marina.id]=marina)
       return newState
     }
-    
+
     case ADD_MARINA: {
       newState = {...state};
-      newState.list.push(action.details)
+      newState = {...state, [action.details.id]:action.details}
       return newState;
     }
 
