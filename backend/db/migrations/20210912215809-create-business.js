@@ -21,9 +21,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      category: {
+      cost: {
         allowNull: false,
-        type: Sequelize.STRING(30)
+        type: Sequelize.DECIMAL
       },
       description: {
         allowNull: false,

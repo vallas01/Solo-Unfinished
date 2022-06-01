@@ -15,6 +15,12 @@ router.get('/', asyncHandler(async function(req, res) {
     return res.json(businesses);
 }));
 
+// create a marina
+router.post('/', asyncHandler(async function(req, res) {
+    const newMarina = await Business.create(req.body);
+    console.log('BACKEND POST AFTER ADD TO DB',newMarina)
+    return res.json(newMarina)
+}));
 
 
 module.exports = router;
