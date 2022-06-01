@@ -9,6 +9,7 @@ function MarinaInputForm() {
     // eslint-disable-next-line
   const sessionUser = useSelector(state => state.session.user);
 
+  const [ownerId, setOwnerId] = useState(1)
   const [name, setName] = useState('');
   const [imgUrl, setImgUrl] = useState('');
   const [cost, setCost] = useState('');
@@ -31,6 +32,7 @@ function MarinaInputForm() {
     e.preventDefault();
 
     const newMarina = {
+        ownerId,
         name,
         imgUrl,
         cost,
@@ -47,6 +49,7 @@ function MarinaInputForm() {
   };
 
   const reset = () => {
+      setOwnerId('');
       setName('');
       setImgUrl('');
       setCost('');
