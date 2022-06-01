@@ -13,7 +13,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: { model: 'Users' }
       },
-      title: {
+      name: {
         allowNull: false,
         type: Sequelize.STRING(100)
       },
@@ -21,9 +21,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      category: {
+      cost: {
         allowNull: false,
-        type: Sequelize.STRING(30)
+        type: Sequelize.DECIMAL
       },
       description: {
         allowNull: false,
@@ -41,9 +41,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING(20)
       },
-      zipCode: {
+      country: {
         allowNull: false,
-        type: Sequelize.STRING(5)
+        type: Sequelize.STRING(10)
       },
       lat: {
         type: Sequelize.DECIMAL

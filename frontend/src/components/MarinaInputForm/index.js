@@ -13,9 +13,9 @@ function MarinaInputForm() {
   const [state, setState] = useState('');
   const [country, setCountry] = useState([]);
   const [cost, setCost] = useState('');
-  const [longitude, setLongitude] = useState('');
-  const [latitude, setLatitude] = useState([]);
-  const [imagePath, setImagePath] = useState([]);
+  const [lng, setLng] = useState('');
+  const [lat, setLat] = useState([]);
+  const [imgUrl, setImgUrl] = useState([]);
 
   const dispatch = useDispatch();
 
@@ -32,9 +32,9 @@ function MarinaInputForm() {
         state,
         country,
         cost,
-        longitude,
-        latitude,
-        imagePath
+        lng,
+        lat,
+        imgUrl
     };
     dispatch(createMarina(newMarina));
     reset();
@@ -45,9 +45,9 @@ function MarinaInputForm() {
       setState('');
       setCountry('');
       setCost('');
-      setLongitude('');
-      setLatitude('');
-      setImagePath('')
+      setLng('');
+      setLat('');
+      setImgUrl('')
   }
 
   return (
@@ -75,7 +75,7 @@ function MarinaInputForm() {
                 <input
                 type="text"
                 name='state'
-                placeholder='Florida'
+                placeholder='e.g. Florida'
                 value={state}
                 onChange={(e) => setState(e.target.value)}
                 required
@@ -88,7 +88,7 @@ function MarinaInputForm() {
                 <input
                 type="text"
                 name='country'
-                placeholder='USA'
+                placeholder='e.g. USA'
                 value={country}
                 onChange={(e) => setCountry(e.target.value)}
                 required
@@ -101,7 +101,7 @@ function MarinaInputForm() {
                 <input
                 type="integer"
                 name='cost'
-                placeholder=''
+                placeholder='e.g. 2.20'
                 value={cost}
                 onChange={(e) => setCost(e.target.value)}
                 required
@@ -110,30 +110,52 @@ function MarinaInputForm() {
         </div>
         <div className='cell'>
             <label>
-                Latitude
+                lat
                 <input
                 type="integer"
-                name='latitude'
+                name='lat'
                 placeholder=''
-                value={latitude}
-                onChange={(e) => setLatitude(e.target.value)}
+                value={lat}
+                onChange={(e) => setLat(e.target.value)}
                 required
                 />
             </label>
         </div>
         <div className='cell'>
             <label>
-                Longitude
+                lng
                 <input
                 type="integer"
-                name='longitude'
+                name='lng'
                 placeholder=''
-                value={longitude}
-                onChange={(e) => setLongitude(e.target.value)}
+                value={lng}
+                onChange={(e) => setLng(e.target.value)}
                 required
                 />
             </label>
         </div>
+
+
+
+        <div className='cell'>
+            <label>
+                Url for an Image
+                <input
+                type="text"
+                name='imgUrl'
+                placeholder='http://...'
+                value={imgUrl}
+                onChange={(e) => setImgUrl(e.target.value)}
+                required
+                />
+            </label>
+        </div>
+
+
+
+
+
+
         <button type="submit">Submit</button>
         </form>
     </div>

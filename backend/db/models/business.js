@@ -2,14 +2,14 @@
 module.exports = (sequelize, DataTypes) => {
   const Business = sequelize.define('Business', {
     ownerId: DataTypes.INTEGER,
-    title: DataTypes.STRING,
+    name: DataTypes.STRING,
     imgUrl: DataTypes.STRING,
-    category: DataTypes.STRING,
+    cost: DataTypes.DECIMAL,
     description: DataTypes.TEXT,
     address: DataTypes.STRING,
     city: DataTypes.STRING,
     state: DataTypes.STRING,
-    zipCode: DataTypes.STRING,
+    country: DataTypes.STRING,
     lat: DataTypes.DECIMAL,
     lng: DataTypes.DECIMAL
   }, {});

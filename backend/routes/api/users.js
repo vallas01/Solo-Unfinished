@@ -96,7 +96,7 @@ router.patch('/:userId(\\d+)/businesses/:businessId(\\d+)/reviews/:reviewId(\\d+
   return res.json(updatedReview)
 }));
 
-//user deltes their own review
+//user deletes their own review
 router.delete('/:userId(\\d+)/businesses/:businessId(\\d+)/reviews/:reviewId(\\d+)', asyncHandler(async function(req, res) {
   const reviewId = parseint(req.params.reviewId, 10)
 

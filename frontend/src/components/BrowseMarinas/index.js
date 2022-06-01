@@ -28,7 +28,8 @@ const BrowseMarinas = () => {
             {Object.values(marina).map((marina)=>{
                 return(
                     <li key={marina.id}>
-                        <h2>{marina.title}</h2>
+                        <h2>{marina.name}</h2>
+                        <p>{marina.cost} per foot</p>
                         <img src={marina.imgUrl} alt='marina'/>
                     </li>
                 )
