@@ -10,15 +10,15 @@ function MarinaInputForm() {
   const sessionUser = useSelector(state => state.session.user);
 
   const [name, setName] = useState('');
-  const [imgUrl, setImgUrl] = useState([]);
+  const [imgUrl, setImgUrl] = useState('');
   const [cost, setCost] = useState('');
   const [description, setDescription] = useState('');
   const [address, setAddress] = useState('');
-  const []
+  const [city, setCity] = useState('');
   const [state, setState] = useState('');
-  const [country, setCountry] = useState([]);
+  const [country, setCountry] = useState('');
+  const [lat, setLat] = useState('');
   const [lng, setLng] = useState('');
-  const [lat, setLat] = useState([]);
 
   const dispatch = useDispatch();
 
@@ -39,8 +39,8 @@ function MarinaInputForm() {
         city,
         state,
         country,
-        lng,
         lat,
+        lng,
     };
     dispatch(createMarina(newMarina));
     reset();
@@ -56,8 +56,8 @@ function MarinaInputForm() {
       setState('');
       setCountry('');
       setCost('');
-      setLng('');
       setLat('');
+      setLng('');
   }
 
   return (
