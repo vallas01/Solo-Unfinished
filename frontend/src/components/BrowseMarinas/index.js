@@ -29,6 +29,7 @@ const BrowseMarinas = () => {
                 return(
                     <li key={marina.id}>
                         <h2>{marina.name}</h2>
+                        <p>{marina.cost} per foot</p>
                         <img src={marina.imgUrl} alt='marina'/>
                     </li>
                 )
