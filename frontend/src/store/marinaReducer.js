@@ -100,6 +100,12 @@ const marinaReducer = (state = initialState, action) => {
       action.list.forEach(marina=>newState[marina.id]=marina)
       return newState
     }
+    
+    case ADD_MARINA: {
+      newState = {...state};
+      newState.list.push(action.details)
+      return newState;
+    }
 
     case LIST_1_MARINA: {
       newState = {...state}
@@ -122,11 +128,6 @@ const marinaReducer = (state = initialState, action) => {
       return newState
     }
 
-    case ADD_MARINA: {
-      newState = {...state};
-      newState.list.push(action.details)
-      return newState;
-    }
 
     case REMOVE_MARINA: {
       newState = {...state}
