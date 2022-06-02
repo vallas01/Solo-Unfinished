@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './MarinaPage.css';
-// import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
-// import { Redirect } from 'react-router-dom';
 import { useHistory, useParams } from 'react-router-dom';
 import { getMarinas, updateMarinaDetails } from '../../store/marinaReducer'
+// import { Redirect } from 'react-router-dom';
+// import * as sessionActions from '../../store/session';
 
 function MarinaPage() {
     const dispatch = useDispatch();
@@ -14,60 +14,59 @@ function MarinaPage() {
     const marinas = useSelector(state => state.marina);
     const history = useHistory();
 
+    const marina = marinas[marinaId]
 
     // const userId = useSelector(state => {
-      //     return state.session.user.id
-      // });
-      // console.log(userId)
+    //     return state.session.user.id
+    // });
 
-      useEffect(() => {
+
+    useEffect(() => {
         dispatch(getMarinas());
     }, [dispatch])
 
     // eslint-disable-next-line
-    const [id, setId] = useState(marinas.id)
-    console.log(`id =====>  ${id}`)
+    const [id, setId] = useState('')
     // eslint-disable-next-line
-    const [ownerId, setOwnerId] = useState(marinas.ownerId)
+    const [ownerId, setOwnerId] = useState('')
 // eslint-disable-next-line
-    const [name, setName] = useState(marinas.name);
+    const [name, setName] = useState('');
 // eslint-disable-next-line
-    const [imgUrl, setImgUrl] = useState(marinas.imgUrl);
-    const [cost, setCost] = useState(marinas.cost);
+    const [imgUrl, setImgUrl] = useState('');
+    const [cost, setCost] = useState('');
 // eslint-disable-next-line
-    const [description, setDescription] = useState(marinas.description);
+    const [description, setDescription] = useState('');
 // eslint-disable-next-line
-    const [address, setAddress] = useState(marinas.address);
+    const [address, setAddress] = useState('');
 // eslint-disable-next-line
-    const [city, setCity] = useState(marinas.city);
+    const [city, setCity] = useState('');
 // eslint-disable-next-line
-    const [state, setState] = useState(marinas.state);
+    const [state, setState] = useState('');
 // eslint-disable-next-line
-    const [country, setCountry] = useState(marinas.country);
+    const [country, setCountry] = useState('');
 // eslint-disable-next-line
-    const [lat, setLat] = useState(marinas.lat);
+    const [lat, setLat] = useState('');
 // eslint-disable-next-line
-    const [lng, setLng] = useState(marinas.lng);
+    const [lng, setLng] = useState('');
 
-    // const updateName = (e) => setName(e.target.value);
-    const updateCost = (e) => setCost(e.target.value);
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         const payload = {
-            id,
-            ownerId,
-            name,
-            imgUrl,
+            id: marina.id,
+            ownerId: marina.ownerId,
+            name : marina.name,
+            imgUrl : marina.imgUrl,
             cost,
-            description,
-            address,
-            city,
-            state,
-            country,
-            lat,
-            lng,
+            description : marina.description,
+            address: marina.address,
+            city: marina.city,
+            state : marina.state,
+            country : marina.country,
+            lat : marina.lat,
+            lng : marina.lng,
         };
 
         let editedMarina = dispatch(updateMarinaDetails(payload))
@@ -103,7 +102,7 @@ function MarinaPage() {
                 placeholder=''
                 value={name}
                 required
-                onChange={updateName}
+                onChange={(e) => setName(e.target.value)}
               />
             </label> */}
             <label>
@@ -113,7 +112,7 @@ function MarinaPage() {
                 name='cost'
                 required
                 value={cost}
-                onChange={updateCost}
+                onChange={(e) => setCost(e.target.value)}
               />
             </label>
 
