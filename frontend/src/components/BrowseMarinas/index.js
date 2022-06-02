@@ -1,6 +1,5 @@
 import { useEffect  } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { useParams } from 'react-router-dom';
 // eslint-disable-next-line
 import { getMarinas } from '../../store/marinaReducer';
 import './BrowseMarinas.css';
@@ -10,12 +9,10 @@ import './BrowseMarinas.css';
 const BrowseMarinas = () => {
 
     const dispatch = useDispatch();
-    // const { marinaId } = useParams();
     const marina = useSelector(state => {
         return state.marina;
     });
 
-    console.log(`marina: ${marina}`)
 
     useEffect(() => {
         dispatch(getMarinas())

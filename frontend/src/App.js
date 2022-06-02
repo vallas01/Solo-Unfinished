@@ -6,7 +6,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import MarinaInputForm from "./components/MarinaInputForm";
-// import MarinaPage from "./components/MarinaPage"
+import MarinaPage from "./components/MarinaPage"
 import BrowseMarinas from "./components/BrowseMarinas"
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
             <MarinaInputForm />
           </Route>
           <Route path="/marinas/:marinaId">
-            {/* <MarinaPage /> */}
+            <MarinaPage />
           </Route>
 
         </Switch>

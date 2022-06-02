@@ -31,7 +31,7 @@ const editMarinas = updatedMarina => ({
 
 /*-------- SELECTORS -------*/
 
-export const getMarinas = () => async (dispatch) => {
+export const getMarinas = () => async (dispatch) => { 
     const response = await csrfFetch(`/api/marinas`);
     if (response.ok) {
         const list = await response.json();
