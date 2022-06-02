@@ -31,7 +31,7 @@ const editMarinas = updatedMarina => ({
 
 /*-------- SELECTORS -------*/
 
-export const getMarinas = () => async (dispatch) => { 
+export const getMarinas = () => async (dispatch) => {
     const response = await csrfFetch(`/api/marinas`);
     if (response.ok) {
         const list = await response.json();
@@ -108,27 +108,18 @@ const marinaReducer = (state = initialState, action) => {
       return newState;
     }
 
+    case UPDATE_MARINA: {
+      newState = {...state};
+      newState = {...state, [action.updatedMarina.id]:action.updatedMarina}
+      return newState
+    }
+
+
     case LIST_1_MARINA: {
       newState = {...state}
       newState.currentMarina = action.details
       return newState
     }
-
-
-    case UPDATE_MARINA: {
-      newState = {...state};
-      const marinaToUpdate = newState.list.find((marina) => marina.id === action.updatedMarina.id)
-
-      newState.list.map(marina => {
-          if (marina.id === marinaToUpdate.id) {
-              return marina = action.updatedMarinas
-          } else {
-              return marina
-          }
-      });
-      return newState
-    }
-
 
     case REMOVE_MARINA: {
       newState = {...state}

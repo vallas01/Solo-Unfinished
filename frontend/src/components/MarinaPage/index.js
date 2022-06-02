@@ -4,44 +4,59 @@ import './MarinaPage.css';
 import { useDispatch, useSelector } from 'react-redux';
 // import { Redirect } from 'react-router-dom';
 import { useHistory, useParams } from 'react-router-dom';
-import { getOneMarina, updateMarinaDetails } from '../../store/marinaReducer'
+import { getMarinas, updateMarinaDetails } from '../../store/marinaReducer'
 
 function MarinaPage() {
     const dispatch = useDispatch();
-    const history = useHistory();
+     // eslint-disable-next-line
     const { marinaId } = useParams();
 
-    const currentMarina = useSelector(state => {
-        return state.marinas.currentMarina;
-    });
+    const marinas = useSelector(state => state.marina);
+    const history = useHistory();
+
 
     // const userId = useSelector(state => {
-    //     return state.session.user.id
-    // });
+      //     return state.session.user.id
+      // });
+      // console.log(userId)
 
-    useEffect(() => {
-        dispatch(getOneMarina());
-    }, [dispatch, marinaId])
+      useEffect(() => {
+        dispatch(getMarinas());
+    }, [dispatch])
 
-    const [ownerId, setOwnerId] = useState(1)
-    const [name, setName] = useState(currentMarina.name);
-    const [imgUrl, setImgUrl] = useState(currentMarina.imgUrl);
-    const [cost, setCost] = useState(currentMarina.cost);
-    const [description, setDescription] = useState(currentMarina.description);
-    const [address, setAddress] = useState(currentMarina.address);
-    const [city, setCity] = useState(currentMarina.city);
-    const [state, setState] = useState(currentMarina.state);
-    const [country, setCountry] = useState(currentMarina.country);
-    const [lat, setLat] = useState(currentMarina.lat);
-    const [lng, setLng] = useState(currentMarina.lng);
+    // eslint-disable-next-line
+    const [id, setId] = useState(marinas.id)
+    console.log(`id =====>  ${id}`)
+    // eslint-disable-next-line
+    const [ownerId, setOwnerId] = useState(marinas.ownerId)
+// eslint-disable-next-line
+    const [name, setName] = useState(marinas.name);
+// eslint-disable-next-line
+    const [imgUrl, setImgUrl] = useState(marinas.imgUrl);
+    const [cost, setCost] = useState(marinas.cost);
+// eslint-disable-next-line
+    const [description, setDescription] = useState(marinas.description);
+// eslint-disable-next-line
+    const [address, setAddress] = useState(marinas.address);
+// eslint-disable-next-line
+    const [city, setCity] = useState(marinas.city);
+// eslint-disable-next-line
+    const [state, setState] = useState(marinas.state);
+// eslint-disable-next-line
+    const [country, setCountry] = useState(marinas.country);
+// eslint-disable-next-line
+    const [lat, setLat] = useState(marinas.lat);
+// eslint-disable-next-line
+    const [lng, setLng] = useState(marinas.lng);
 
-    const updateName = (e) => setName(e.target.value);
+    // const updateName = (e) => setName(e.target.value);
     const updateCost = (e) => setCost(e.target.value);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         const payload = {
+            id,
             ownerId,
             name,
             imgUrl,
@@ -55,56 +70,59 @@ function MarinaPage() {
             lng,
         };
 
-        let editedMarina = await dispatch(updateMarinaDetails(payload))
+        let editedMarina = dispatch(updateMarinaDetails(payload))
 
         if (editedMarina) {
-          history.push(`/marinas/${editedMarinas.id}`);
+          history.push(`/marinas/${editedMarina.id}`);
         }
       };
 
 
-    const deleteThisMarina = (e) => {
-        e.preventDefault();
-        dispatch(deleteMarina(marinaId));
-        history.push(`/`);
-    }
+    // const deleteThisMarina = (e) => {
+    //     e.preventDefault();
+    //     dispatch(deleteMarina(marinaId));
+    //     history.push(`/`);
+    // }
 
     return (
-          <>
-            <div>
-                Hello You Beautiful Component
-            </div>
+          <div className='containerEdit'>
 
-            <form className='form' onSubmit={handleSubmit}>
+            <form className='edit-form' onSubmit={handleSubmit}>
+              <h2>{marinas.name}</h2>
             {/* <input
               type="hidden"
               min="1"
               required
               value={userId}
               /> */}
-            <input
-              type="text"
-              placeholder="Marina Name"
-              required
-              value={name}
-              onChange={updateName}
-              className='edit-input'/>
+            {/* <label>
+              Update the Marina Name
+              <input
+                type="text"
+                name='name'
+                placeholder=''
+                value={name}
+                required
+                onChange={updateName}
+              />
+            </label> */}
+            <label>
+              Update the Slip Cost per Foot
+              <input
+                type="integer"
+                name='cost'
+                required
+                value={cost}
+                onChange={updateCost}
+              />
+            </label>
 
             <button className='edit-marina-btn' type="submit">Edit Marina</button>
           </form>
 
-            <div>
-                {/* {userId && userId === review?.userId && (//TODO Add Link here ) } */}
-                <Link to={`/marinas/${marinaId}/reviews/${review?.id}/edit`}>
-                    <button value={review.id} className="review-edit red-hover-effect">Edit</button>
-                </Link>
 
-                {/* {userId && userId === review?.userId && (//TODO Add Button here ) } */}
-                (<button value={marina.id} className="delete-button red-hover-effect" onClick={deleteThisMarina}>Delete</button>)
 
-            </div>
-
-        </>
+        </div>
     )
 }
 
