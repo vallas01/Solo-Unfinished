@@ -65,111 +65,104 @@ function MarinaInputForm() {
 
   return (
     <div className='container'>
-        <div>
-            <h1>Add a Marina</h1>
-        </div>
         <form onSubmit={handleSubmit}>
-        <div className='cell'>
-            <label>
-                Marina Name
-                <input
-                type="text"
-                name='name'
-                placeholder='Marina'
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-                />
-            </label>
+        <div className='inputform'>
+            <div className='MarinaHeader'>
+                Add a Marina
+            </div>
+
+            <div className='lrcontainer'>
+                <div className='leftContainer'>
+                    <label>
+                        Marina Name
+                        <input
+                        type="text"
+                        name='name'
+                        placeholder='Marina'
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        required
+                        />
+                    </label>
+
+                    <label>
+                        State/Province
+                        <input
+                        type="text"
+                        name='state'
+                        placeholder='e.g. Florida'
+                        value={state}
+                        onChange={(e) => setState(e.target.value)}
+                        required
+                        />
+                    </label>
+
+                    <label>
+                        Country
+                        <input
+                        type="text"
+                        name='country'
+                        placeholder='e.g. USA'
+                        value={country}
+                        onChange={(e) => setCountry(e.target.value)}
+                        required
+                        />
+                    </label>
+                </div>
+
+                <div className='rightContainer'>
+                    <label>
+                        Slip Cost per Foot
+                        <input
+                        type="integer"
+                        name='cost'
+                        placeholder='e.g. 2.20'
+                        value={cost}
+                        onChange={(e) => setCost(e.target.value)}
+                        required
+                        />
+                    </label>
+                    <label>
+                        Latitide
+                        <input
+                        type="integer"
+                        name='lat'
+                        placeholder=''
+                        value={lat}
+                        onChange={(e) => setLat(e.target.value)}
+                        required
+                        />
+                    </label>
+                    <label>
+                        Longitude
+                        <input
+                        type="integer"
+                        name='lng'
+                        placeholder=''
+                        value={lng}
+                        onChange={(e) => setLng(e.target.value)}
+                        required
+                        />
+                    </label>
+                </div>
+            </div>
+            <div className='urlBox'>
+                <label>
+                    Url for an Image
+                    <input
+                    type="text"
+                    name='imgUrl'
+                    placeholder='http://...'
+                    value={imgUrl}
+                    onChange={(e) => setImgUrl(e.target.value)}
+                    required
+                    />
+                </label>
+            </div>
         </div>
-        <div className='cell'>
-            <label>
-                State
-                <input
-                type="text"
-                name='state'
-                placeholder='e.g. Florida'
-                value={state}
-                onChange={(e) => setState(e.target.value)}
-                required
-                />
-            </label>
+        <div className='marinaButton'>
+            <button type="submit">Submit</button>
         </div>
-        <div className='cell'>
-            <label>
-                Country
-                <input
-                type="text"
-                name='country'
-                placeholder='e.g. USA'
-                value={country}
-                onChange={(e) => setCountry(e.target.value)}
-                required
-                />
-            </label>
-        </div>
-        <div className='cell'>
-            <label>
-                Slip Cost per Foot
-                <input
-                type="integer"
-                name='cost'
-                placeholder='e.g. 2.20'
-                value={cost}
-                onChange={(e) => setCost(e.target.value)}
-                required
-                />
-            </label>
-        </div>
-        <div className='cell'>
-            <label>
-                lat
-                <input
-                type="integer"
-                name='lat'
-                placeholder=''
-                value={lat}
-                onChange={(e) => setLat(e.target.value)}
-                required
-                />
-            </label>
-        </div>
-        <div className='cell'>
-            <label>
-                lng
-                <input
-                type="integer"
-                name='lng'
-                placeholder=''
-                value={lng}
-                onChange={(e) => setLng(e.target.value)}
-                required
-                />
-            </label>
-        </div>
-
-
-
-        <div className='cell'>
-            <label>
-                Url for an Image
-                <input
-                type="text"
-                name='imgUrl'
-                placeholder='http://...'
-                value={imgUrl}
-                onChange={(e) => setImgUrl(e.target.value)}
-                required
-                />
-            </label>
-        </div>
-
-
-
-
-
-
-        <button type="submit">Submit</button>
         </form>
     </div>
   );

@@ -1,14 +1,40 @@
+input {
+  font-size: 1.2em;
+  height: 30px;
+  width: 300px;
+  padding: 6px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: none;
+  border-radius: 25px;
+}
+
 .container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  /* padding-top: 40px; */
   }
 
-  input {
-    height: 30px;
-    width: 300px;
-    padding: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border: none;
-    border-radius: 4px;
-  }
+.MarinaHeader {
+  font-size: 1.7em;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+}
+
+
+.inputform {
+  height: 580px;
+  width: 350px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  border-radius: 20px;
+  display: block;
+}
+
+.marinaButton {
+  margin-left: 40px;
+}

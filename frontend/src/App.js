@@ -30,7 +30,7 @@ function App() {
           <Route exact path="/marinas">
             <BrowseMarinas />
           </Route>
-          <Route exact path="/addmarinas/new">
+          <Route exact path="/new">
             <MarinaInputForm />
           </Route>
           <Route path="/marinas/:marinaId">
