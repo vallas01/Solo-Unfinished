@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import MarinaInputForm from "./components/MarinaInputForm";
 import MarinaPage from "./components/MarinaPage"
 import BrowseMarinas from "./components/BrowseMarinas"
+import BrowseReviews from "./components/BrowseReviews";
 
 function App() {
   const dispatch = useDispatch();
@@ -35,6 +36,9 @@ function App() {
           </Route>
           <Route path="/marinas/:marinaId">
             <MarinaPage />
+          </Route>
+          <Route path="/reviews">
+            <BrowseReviews />
           </Route>
 
         </Switch>

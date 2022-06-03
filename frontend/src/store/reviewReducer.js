@@ -1,9 +1,9 @@
 import { csrfFetch } from "./csrf";
 
-const LIST_REVIEWS = 'marina/listReviews';
-const ADD_REVIEW = 'marina/addReview';
-const REMOVE_REVIEW = 'marina/removeReview';
-const UPDATE_REVIEW = 'marina/updateReview'
+const LIST_REVIEWS = 'review/listReviews';
+const ADD_REVIEW = 'review/addReview';
+const REMOVE_REVIEW = 'review/removeReview';
+const UPDATE_REVIEW = 'review/updateReview'
 
 const listReviews = list => ({
   type: LIST_REVIEWS,
@@ -29,7 +29,7 @@ const editReviews = updatedMarina => ({
 
 
 export const getReviews = () => async (dispatch) => {
-    const response = await csrfFetch(`/api/marinas`);
+    const response = await csrfFetch(`/api/reviews`);
     if (response.ok) {
         const list = await response.json();
         dispatch(listReviews(list));
