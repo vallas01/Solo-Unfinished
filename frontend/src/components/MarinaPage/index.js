@@ -66,7 +66,7 @@ function MarinaPage() {
             lat : marina.lat,
             lng : marina.lng,
         };
-console.log(`Cost ==== ${cost}`)
+ 
         let editedMarina = dispatch(updateMarinaDetails(payload))
 
         if (editedMarina) {
@@ -83,7 +83,7 @@ console.log(`Cost ==== ${cost}`)
 
     return (
           <div className='containerEdit'>
-             
+
             <form className='edit-form' onSubmit={handleSubmit}>
               <h2>Update the Slip Cost per Foot</h2>
             {/* <input
