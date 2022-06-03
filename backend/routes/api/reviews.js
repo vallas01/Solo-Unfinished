@@ -35,4 +35,15 @@ router.put('/:id(\\d+)', asyncHandler(async function(req, res) {
 
     res.json(editedMarina);
 }));
+
+//delete a review
+router.delete('/:id(\\d+)', asyncHandler(async function(req, res) {
+
+    const review = await Review.findByPk(req.params.id)
+    await review.destroy();
+    // const allMarinas = await Business.findAll();
+    return res.json(req.params.id)
+}));
+
+
 module.exports = router;

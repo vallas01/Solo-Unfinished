@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 // import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 // import { Redirect } from 'react-router-dom';
 import { createMarina} from '../../store/marinaReducer'
 import './MarinaInputForm.css';
@@ -8,6 +9,7 @@ import './MarinaInputForm.css';
 function MarinaInputForm() {
     // eslint-disable-next-line
   const sessionUser = useSelector(state => state.session.user);
+  const history = useHistory()
 
   const [ownerId, setOwnerId] = useState(1)
   const [name, setName] = useState('');
@@ -44,8 +46,14 @@ function MarinaInputForm() {
         lat,
         lng,
     };
-    dispatch(createMarina(newMarina));
+    let doneMarina = dispatch(createMarina(newMarina));
+
     reset();
+
+    if (doneMarina) {
+        // history.push(`/marinas/${editedMarina.id}`);
+        history.push(`/marinas`);
+    }
   };
 
   const reset = () => {
