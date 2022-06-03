@@ -1,0 +1,13 @@
+.listContainer {
+    display: block;
+}
+
+
+
+.review_container {
+    width: 485px;
+    height: 10%;
+    margin: 6px;
+    border-radius: 30px;
+    border: 1px solid black;
+}
