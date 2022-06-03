@@ -2,7 +2,7 @@ import { useEffect  } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // eslint-disable-next-line
 import { NavLink, useHistory } from 'react-router-dom';
-import { getReviews } from '../../store/reviewReducer';
+import { getReviews, deleteReview } from '../../store/reviewReducer';
 import './BrowseReviews.css';
 
 
@@ -10,10 +10,16 @@ import './BrowseReviews.css';
 const BrowseReviews = () => {
 
     const dispatch = useDispatch();
-    // const history = useHistory();
+    const history = useHistory();
     const review = useSelector(state => {
         return state.review;
     });
+
+    const deleteThisReview = (id) => {
+        // e.preventDefault();
+        dispatch(deleteReview(id));
+        history.push(`/reviews`);
+    }
 
 
     useEffect(() => {
@@ -40,7 +46,7 @@ const BrowseReviews = () => {
                                 <button value={review.id} className="other-btn red-hover-effect" >Edit</button>
                             </NavLink>
 
-                            <button value={review.id} className="delete-btn red-hover-effect" >Delete</button>
+                            <button value={review.id} className="delete-btn red-hover-effect" onClick={()=>deleteThisReview(review.id)}>Delete</button>
 
                         </li>
                         </div>

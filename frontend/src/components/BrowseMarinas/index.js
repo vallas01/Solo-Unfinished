@@ -24,6 +24,7 @@ const BrowseMarinas = () => {
         dispatch(getMarinas())
     }, [dispatch]);
 
+
     return (
         <div>
             <div className='listContainer'>
@@ -37,7 +38,7 @@ const BrowseMarinas = () => {
                         <li key={marina.id} >
                             <h2>{marina.name}  -  ${marina.cost} / foot</h2>
 
-                            <NavLink to={`/marinas/${marina.id}`}>
+                            <NavLink  to={`/marinas/${marina.id}`}>
                                 <img src={marina.imgUrl} alt='marina' />
                             </NavLink>
 
@@ -47,8 +48,8 @@ const BrowseMarinas = () => {
                                 <button value={marina.id} className="other-btn" >Reviews</button>
                             </NavLink>
 
-                            <button value={marina.id} className="delete-btn red-hover-effect" onClick={()=>deleteThisMarina(marina.id)}>Delete</button>
-                            <button value={marina.id} className="other-btn" >Reservations</button>
+                            <button  value={marina.id} className="delete-btn red-hover-effect" onClick={()=>deleteThisMarina(marina.id)}>Delete</button>
+                            <button  value={marina.id} className="other-btn" >Reservations</button>
                         </li>
                         </div>
                     )

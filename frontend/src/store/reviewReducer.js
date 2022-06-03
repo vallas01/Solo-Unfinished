@@ -43,13 +43,29 @@ export const getReviews = () => async (dispatch) => {
     })
 
     console.log(`response: ${response.data}`)
-    
+
     if(response.ok){
     const updatedReview = await response.json()
     dispatch(editReviews(updatedReview))
     return updatedReview;
   }
 };
+
+
+export const deleteReview = (reviewId) => async dispatch => {
+  console.log(reviewId)
+  const response = await csrfFetch(`/api/reviews/${reviewId}`, {
+    method: 'DELETE',
+    body: JSON.stringify({reviewId})
+  })
+  if(response.ok){
+      const allReviews = await response.json();
+      dispatch(removeReview(allReviews));
+      return 'review deleted';
+  }
+};
+
+
 
 
 const initialState = {};
@@ -68,11 +84,16 @@ const reviewReducer = (state = initialState, action) => {
 
     case UPDATE_REVIEW: {
       newState = {...state};
-      newState = {...state, [action.updatedMarina.id]:action.updatedMarina}
+      newState = {...state, [action.updatedreview.id]:action.updatedreview}
       return newState
     }
 
-
+    case REMOVE_REVIEW: {
+      console.log("REDUCER IS HERE", action.id)
+      newState = {...state}
+      delete newState[action.id]
+      return newState
+    }
 
     default:
       return state;
