@@ -38,7 +38,7 @@ router.put('/:id(\\d+)', asyncHandler(async function(req, res) {
 
 //delete a marina
 router.delete('/:id(\\d+)', asyncHandler(async function(req, res) {
-
+    console.log(req.params.id)
     const marina = await Business.findByPk(req.params.id)
     await marina.destroy();
     const allMarinas = await Business.findAll();

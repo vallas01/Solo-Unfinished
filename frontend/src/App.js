@@ -38,7 +38,7 @@ function App() {
           <Route path="/marinas/:marinaId">
             <MarinaPage />
           </Route>
-          <Route path="/reviews">
+          <Route exact path="/reviews">
             <BrowseReviews />
           </Route>
           <Route path="/reviews/:reviewId">

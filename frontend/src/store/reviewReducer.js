@@ -34,15 +34,17 @@ export const getReviews = () => async (dispatch) => {
         const list = await response.json();
         dispatch(listReviews(list));
     }
-    console.log(`response: ${response.data}`)
-};
+  };
 
-export const updateReviewDetails = (reviewDetails) => async dispatch => {
-  const response = await csrfFetch(`/api/reviews/${reviewDetails.id}`, {
-    method: 'PUT',
-    body: JSON.stringify(reviewDetails)
-  })
-  if(response.ok){
+  export const updateReviewDetails = (reviewDetails) => async dispatch => {
+    const response = await csrfFetch(`/api/reviews/${reviewDetails.id}`, {
+      method: 'PUT',
+      body: JSON.stringify(reviewDetails)
+    })
+
+    console.log(`response: ${response.data}`)
+    
+    if(response.ok){
     const updatedReview = await response.json()
     dispatch(editReviews(updatedReview))
     return updatedReview;

@@ -6,7 +6,6 @@ import { getMarinas, deleteMarina } from '../../store/marinaReducer';
 import './BrowseMarinas.css';
 
 
-
 const BrowseMarinas = () => {
 
     const dispatch = useDispatch();
@@ -48,7 +47,7 @@ const BrowseMarinas = () => {
                             <NavLink to='/reviews'>
                                 <button value={marina.id} className="other-btn" >Reviews</button>
                             </NavLink>
-                            
+
                             <button value={marina.id} className="delete-btn red-hover-effect" onClick={deleteThisMarina}>Delete</button>
                             <button value={marina.id} className="other-btn" >Reservations</button>
                         </li>

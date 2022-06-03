@@ -34,7 +34,7 @@ const BrowseReviews = () => {
                         <div className='review_container'>
                         <li key={review.id} >
                             <h2>{review.content}</h2>
-                            <h2>Rating: ${review.rating} Stars! </h2>
+                            <h2>This marina has {review.rating} Stars. </h2>
 
                             <NavLink to={`/reviews/${review.id}`}>
                                 <button value={review.id} className="other-btn red-hover-effect" >Edit</button>

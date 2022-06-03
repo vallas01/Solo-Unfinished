@@ -26,7 +26,7 @@ router.put('/:id(\\d+)', asyncHandler(async function(req, res) {
 
     const reviewToEdit = await Review.findByPk(req.params.id);
 
-    const {cost}   = req.body
+    const {rating}   = req.body
     await reviewToEdit.update({
         rating,
     });

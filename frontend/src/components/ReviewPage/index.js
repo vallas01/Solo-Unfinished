@@ -14,6 +14,8 @@ function ReviewPage() {
 
     const review = reviews[reviewId];
 
+    console.log("Hello FROM ReviewPage")
+
     useEffect(() => {
         dispatch(getReviews());
     }, [dispatch])
@@ -31,6 +33,7 @@ function ReviewPage() {
         e.preventDefault();
 
         const payload = {
+            id: review.id,
             userId: review.userId,
             businessId: review.businessId,
             rating,
@@ -40,11 +43,13 @@ function ReviewPage() {
         let editedReview = dispatch(updateReviewDetails(payload))
 
         if (editedReview) {
-          history.push(`/reviews/${editedReview.id}`);
+          // history.push(`/reviews/${editedReview.id}`);
+          history.push(`/reviews`);
         }
       };
 
     return (
+
         <div className='containerEdit'>
 
           <form className='editRating-form' onSubmit={handleSubmit}>
@@ -62,11 +67,11 @@ function ReviewPage() {
 
             </label>
 
-            <button className='edit-rating-btn' type="submit">Edit Cost</button>
+            <button className='edit-rating-btn' type="submit">Edit Stars</button>
           </form>
 
         </div>
     )
 }
 
-export default ReviewPage
+export default ReviewPage;

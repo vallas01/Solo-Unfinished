@@ -66,11 +66,12 @@ function MarinaPage() {
             lat : marina.lat,
             lng : marina.lng,
         };
- 
+
         let editedMarina = dispatch(updateMarinaDetails(payload))
 
         if (editedMarina) {
-          history.push(`/marinas/${editedMarina.id}`);
+          // history.push(`/marinas/${editedMarina.id}`);
+          history.push(`/marinas`);
         }
       };
 
