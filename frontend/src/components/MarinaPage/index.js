@@ -83,7 +83,7 @@ console.log(`Cost ==== ${cost}`)
 
     return (
           <div className='containerEdit'>
-
+             
             <form className='edit-form' onSubmit={handleSubmit}>
               <h2>Update the Slip Cost per Foot</h2>
             {/* <input
@@ -92,17 +92,7 @@ console.log(`Cost ==== ${cost}`)
               required
               value={userId}
               /> */}
-            {/* <label>
-              Update the Marina Name
-              <input
-                type="text"
-                name='name'
-                placeholder=''
-                value={name}
-                required
-                onChange={(e) => setName(e.target.value)}
-              />
-            </label> */}
+
             <label>
 
               <input
@@ -112,9 +102,10 @@ console.log(`Cost ==== ${cost}`)
                 value={cost}
                 onChange={(e) => setCost(e.target.value)}
               />
+
             </label>
 
-            <button className='edit-marina-btn' type="submit">Edit Marina</button>
+            <button className='edit-marina-btn' type="submit">Edit Cost</button>
           </form>
 
 
