@@ -1,10 +1,9 @@
 .marina_container {
-    width: 40%;
+    width: 485px;
     height: 10%;
-    margin: 20px;
+    margin: 6px;
     border-radius: 30px;
     border: 1px solid black;
-
 }
 
 
@@ -12,7 +11,7 @@ img {
     height: 100px;
     width: 150px;
     border-radius: 25px;
-    margin-left: 100px;
+    margin-left: 170px;
 }
 
 ul {
@@ -20,7 +19,7 @@ ul {
 }
 
 .description {
-    margin-left: 120px;
+    margin-left: 180px;
     width: 400px;
     display: flex;
     align-items: right;
@@ -44,15 +43,31 @@ ul {
     height: 40px;
     width: 80px;
     background-color: rgb(244, 57, 57);
-    border: 1px solid rgb(244, 57, 57);
-    padding: 8px 16px;
-    border-radius: 4px;
+    padding: 2px 10px;
+    border-radius: 20px;
     font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     color: white;
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 30px;
     transition: 0.5s;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.other-btn {
+    height: 40px;
+    width: 140px;
+    margin-left: 28px;
+    border: 1px solid rgb(187, 186, 192);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    color: rgb(43, 39, 60);
+    transition: 0.5s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }

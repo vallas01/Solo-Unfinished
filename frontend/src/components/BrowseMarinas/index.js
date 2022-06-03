@@ -45,7 +45,9 @@ const BrowseMarinas = () => {
                             </NavLink>
 
                             <div className='description'>{marina.description}</div>
+                            <button value={marina.id} className="other-btn red-hover-effect" onClick={deleteThisMarina}>Reviews</button>
                             <button value={marina.id} className="delete-btn red-hover-effect" onClick={deleteThisMarina}>Delete</button>
+                            <button value={marina.id} className="other-btn red-hover-effect" onClick={deleteThisMarina}>Reservations</button>
                         </li>
                         </div>
                     )
