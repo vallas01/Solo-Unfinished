@@ -36,5 +36,14 @@ router.put('/:id(\\d+)', asyncHandler(async function(req, res) {
     res.json(editedMarina);
 }));
 
+//delete a marina
+router.delete('/:id(\\d+)', asyncHandler(async function(req, res) {
+
+    const marina = await Business.findByPk(req.params.id)
+    await marina.destroy();
+    const allMarinas = await Business.findAll();
+    return res.json(allMarinas)
+}));
+
 
 module.exports = router;

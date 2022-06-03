@@ -114,13 +114,6 @@ const marinaReducer = (state = initialState, action) => {
       return newState
     }
 
-
-    case LIST_1_MARINA: {
-      newState = {...state}
-      newState.currentMarina = action.details
-      return newState
-    }
-
     case REMOVE_MARINA: {
       newState = {...state}
       let newMarinaList = newState.list.map(marina => {
@@ -132,6 +125,13 @@ const marinaReducer = (state = initialState, action) => {
       newState = {list: newMarinaList}
       return newState
     }
+
+    case LIST_1_MARINA: {
+      newState = {...state}
+      newState.currentMarina = action.details
+      return newState
+    }
+
 
     default:
       return state;

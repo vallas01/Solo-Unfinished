@@ -1,3 +1,13 @@
+.marina_container {
+    width: 40%;
+    height: 10%;
+    margin: 20px;
+    border-radius: 30px;
+    border: 1px solid black;
+
+}
+
+
 img {
     height: 100px;
     width: 150px;
@@ -28,4 +38,21 @@ ul {
 .span2 {
     margin-left: 180px;
     color: red;
+}
+
+.delete-btn {
+    height: 40px;
+    width: 80px;
+    background-color: rgb(244, 57, 57);
+    border: 1px solid rgb(244, 57, 57);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: 0.5s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
