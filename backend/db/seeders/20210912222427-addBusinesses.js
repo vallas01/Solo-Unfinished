@@ -30,7 +30,7 @@ module.exports = {
       cost: 2.30, description: 'Right on the Intercoastal', address: '1035 S. Federal Highway', city: 'Delray Beach', state: 'FL', country: 'USA', lat: 0.0, lng: 0.0, createdAt: new Date(), updatedAt: new Date()},
      {ownerId: 4, name: 'Bonefish Marina',
      imgUrl: 'https://img.marinas.com/v2/cf91105d12bfbf4ae0b927be1116f0249c308c14a2fdc4086f1e463058d09852.jpg',
-      cost: 2.10, description: 'Enjo but please do not anchor on a reef', address: '97 Coco Plum Drive', city: 'Marathon', state: 'FL', country: 'USA', lat: 0.0, lng: 0.0, createdAt: new Date(), updatedAt: new Date()},
+      cost: 2.10, description: 'Enjoy, fun party!', address: '97 Coco Plum Drive', city: 'Marathon', state: 'FL', country: 'USA', lat: 0.0, lng: 0.0, createdAt: new Date(), updatedAt: new Date()},
      {ownerId: 5, name: 'Grand Bahama Yacht Club',
      imgUrl: 'https://res.cloudinary.com/dockwa/image/upload/c_scale,w_800/v1/marinas/grandbahamayachtclub/GBI_0470.png',
       cost: 2.90, description: 'Reservation recommended', address: 'none', city: 'Freeport', state: 'BA', country: 'Bahamas', lat: 0.0, lng: 0.0, createdAt: new Date(), updatedAt: new Date()},
