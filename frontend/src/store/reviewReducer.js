@@ -15,14 +15,14 @@ const addReview = details => ({
   details
 })
 //eslint-disable-next-line
-const removeMarina = id => ({
+const removeReview = id => ({
   type: REMOVE_REVIEW,
   id
 });
 //eslint-disable-next-line
-const editReviews = updatedMarina => ({
+const editReviews = updatedReview => ({
   type: UPDATE_REVIEW,
-  updatedMarina
+  updatedReview
 });
 
 
@@ -37,7 +37,17 @@ export const getReviews = () => async (dispatch) => {
     console.log(`response: ${response.data}`)
 };
 
-
+export const updateReviewDetails = (reviewDetails) => async dispatch => {
+  const response = await csrfFetch(`/api/reviews/${reviewDetails.id}`, {
+    method: 'PUT',
+    body: JSON.stringify(reviewDetails)
+  })
+  if(response.ok){
+    const updatedReview = await response.json()
+    dispatch(editReviews(updatedReview))
+    return updatedReview;
+  }
+};
 
 
 const initialState = {};
@@ -51,6 +61,12 @@ const reviewReducer = (state = initialState, action) => {
     case LIST_REVIEWS: {
       newState={...state}
       action.list.forEach(review=>newState[review.id]=review)
+      return newState
+    }
+
+    case UPDATE_REVIEW: {
+      newState = {...state};
+      newState = {...state, [action.updatedMarina.id]:action.updatedMarina}
       return newState
     }
 

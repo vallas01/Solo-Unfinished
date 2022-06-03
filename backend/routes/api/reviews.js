@@ -9,17 +9,30 @@ const { User, Business, Review } = require('../../db/models');
 const router = express.Router();
 
 
-//get all marinas
+//get all reviews
 router.get('/', asyncHandler(async function(req, res) {
     const reviews = await Review.findAll();
     return res.json(reviews);
 }));
 
-// create a marina
+// create a review
 router.post('/', asyncHandler(async function(req, res) {
     const newReview = await Review.create(req.body);
     return res.json(newReview);
 }));
 
+//edit a review
+router.put('/:id(\\d+)', asyncHandler(async function(req, res) {
 
+    const reviewToEdit = await Review.findByPk(req.params.id);
+
+    const {cost}   = req.body
+    await reviewToEdit.update({
+        rating,
+    });
+    const idReview = req.params.id
+    const editedMarina = await Review.findByPk(idReview);
+
+    res.json(editedMarina);
+}));
 module.exports = router;
