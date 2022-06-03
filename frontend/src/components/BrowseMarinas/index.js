@@ -14,12 +14,11 @@ const BrowseMarinas = () => {
         return state.marina;
     });
 
-    const deleteThisMarina = (e) => {
-        e.preventDefault();
-        dispatch(deleteMarina(marina.id));
-        history.push(`/`);
+    const deleteThisMarina = (id) => {
+        // e.preventDefault();
+        dispatch(deleteMarina(id));
+        history.push(`/marinas`);
     }
-
 
     useEffect(() => {
         dispatch(getMarinas())
@@ -48,7 +47,7 @@ const BrowseMarinas = () => {
                                 <button value={marina.id} className="other-btn" >Reviews</button>
                             </NavLink>
 
-                            <button value={marina.id} className="delete-btn red-hover-effect" onClick={deleteThisMarina}>Delete</button>
+                            <button value={marina.id} className="delete-btn red-hover-effect" onClick={()=>deleteThisMarina(marina.id)}>Delete</button>
                             <button value={marina.id} className="other-btn" >Reservations</button>
                         </li>
                         </div>

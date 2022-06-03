@@ -73,6 +73,7 @@ export const updateMarinaDetails = (marinaDetails) => async dispatch => {
 };
 
 export const deleteMarina = (marinaId) => async dispatch => {
+  console.log(marinaId)
   const response = await csrfFetch(`/api/marinas/${marinaId}`, {
     method: 'DELETE',
     body: JSON.stringify({marinaId})
@@ -115,13 +116,7 @@ const marinaReducer = (state = initialState, action) => {
 
     case REMOVE_MARINA: {
       newState = {...state}
-      let newMarinaList = newState.list.map(marina => {
-          if (marina.id !== action.details.id) {
-              return marina;
-          }
-          return null;
-      });
-      newState = {list: newMarinaList}
+      delete newState[action.marina.id]
       return newState
     }
 
