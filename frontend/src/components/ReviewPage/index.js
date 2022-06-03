@@ -15,7 +15,7 @@ function ReviewPage() {
     const review = reviews[reviewId];
 
     useEffect(() => {
-        dispatch(getMarinas());
+        dispatch(getReviews());
     }, [dispatch])
 
 // eslint-disable-next-line
@@ -35,20 +35,19 @@ function ReviewPage() {
             businessId: review.businessId,
             rating,
             content : review.content,
-            cost,
         };
 
-        let editedMarina = dispatch(updateReviewDetails(payload))
+        let editedReview = dispatch(updateReviewDetails(payload))
 
-        if (editedMarina) {
-          history.push(`/reviews/${editedMarina.id}`);
+        if (editedReview) {
+          history.push(`/reviews/${editedReview.id}`);
         }
       };
 
     return (
         <div className='containerEdit'>
 
-          <form className='edit-form' onSubmit={handleSubmit}>
+          <form className='editRating-form' onSubmit={handleSubmit}>
             <h2>Update the Star Rating</h2>
 
             <label>
@@ -63,7 +62,7 @@ function ReviewPage() {
 
             </label>
 
-            <button className='edit-marina-btn' type="submit">Edit Cost</button>
+            <button className='edit-rating-btn' type="submit">Edit Cost</button>
           </form>
 
         </div>

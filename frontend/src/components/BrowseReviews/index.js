@@ -36,7 +36,10 @@ const BrowseReviews = () => {
                             <h2>{review.content}</h2>
                             <h2>Rating: ${review.rating} Stars! </h2>
 
-                            <button value={review.id} className="other-btn red-hover-effect" >Edit</button>
+                            <NavLink to={`/reviews/${review.id}`}>
+                                <button value={review.id} className="other-btn red-hover-effect" >Edit</button>
+                            </NavLink>
+
                             <button value={review.id} className="delete-btn red-hover-effect" >Delete</button>
 
                         </li>
