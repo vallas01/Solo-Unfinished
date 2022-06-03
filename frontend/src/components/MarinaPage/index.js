@@ -8,9 +8,7 @@ import { getMarinas, updateMarinaDetails } from '../../store/marinaReducer'
 
 function MarinaPage() {
     const dispatch = useDispatch();
-     // eslint-disable-next-line
     const { marinaId } = useParams();
-
     const marinas = useSelector(state => state.marina);
     const history = useHistory();
 
@@ -68,7 +66,7 @@ function MarinaPage() {
             lat : marina.lat,
             lng : marina.lng,
         };
-
+console.log(`Cost ==== ${cost}`)
         let editedMarina = dispatch(updateMarinaDetails(payload))
 
         if (editedMarina) {
