@@ -80,7 +80,7 @@ export const deleteMarina = (marinaId) => async dispatch => {
   })
   if(response.ok){
       const allMarinas = await response.json();
-      dispatch(getMarinas(allMarinas));
+      dispatch(removeMarina(allMarinas));
       return 'marina deleted';
   }
 };
@@ -115,8 +115,9 @@ const marinaReducer = (state = initialState, action) => {
     }
 
     case REMOVE_MARINA: {
+      console.log("REDUCER IS HERE", action.id)
       newState = {...state}
-      delete newState[action.marina.id]
+      delete newState[action.id]
       return newState
     }
 
