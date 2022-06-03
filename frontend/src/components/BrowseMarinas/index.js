@@ -32,7 +32,8 @@ const BrowseMarinas = () => {
                     <li key={marina.id} >
                         <h2>{marina.name}  -  ${marina.cost} / foot</h2>
 
-                        <NavLink to={'/marinas/${marina.id}'}>
+                        {/* <NavLink to={'/marinas/${marina.id}'}> */}
+                        <NavLink to={'/marinas/1'}>
                         <img src={marina.imgUrl} alt='marina' />
                         </NavLink>
 
