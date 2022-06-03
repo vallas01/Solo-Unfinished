@@ -2,4 +2,30 @@ img {
     height: 100px;
     width: 150px;
     border-radius: 25px;
+    margin-left: 100px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.description {
+    margin-left: 120px;
+    width: 400px;
+    display: flex;
+    align-items: right;
+}
+
+.listContainer {
+    display: block;
+}
+.span1  {
+    margin-left: 150px;
+    display: block;
+    font-size: 30px;
+    font-weight: bolder;
+}
+.span2 {
+    margin-left: 180px;
+    color: red;
 }

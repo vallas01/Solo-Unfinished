@@ -85,7 +85,7 @@ console.log(`Cost ==== ${cost}`)
           <div className='containerEdit'>
 
             <form className='edit-form' onSubmit={handleSubmit}>
-              <h2>{marinas.name}</h2>
+              <h2>Update the Slip Cost per Foot</h2>
             {/* <input
               type="hidden"
               min="1"
@@ -104,7 +104,7 @@ console.log(`Cost ==== ${cost}`)
               />
             </label> */}
             <label>
-              Update the Slip Cost per Foot
+
               <input
                 type="integer"
                 name='cost'

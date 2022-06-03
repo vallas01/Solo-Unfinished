@@ -3,7 +3,9 @@
     justify-content: center;
     padding-top: 40px;
   }
-
+h2 {
+  margin-left: 23px;
+}
   .edit-form {
     height: 250px;
     width: 350px;

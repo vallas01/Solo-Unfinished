@@ -1,5 +1,6 @@
 import { useEffect  } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 // eslint-disable-next-line
 import { getMarinas } from '../../store/marinaReducer';
 import './BrowseMarinas.css';
@@ -20,14 +21,22 @@ const BrowseMarinas = () => {
 
     return (
         <div>
-            <h1>MARINA LIST</h1>
+            <div className='listContainer'>
+                <span className='span1'>MARINA LIST</span>
+                <span className='span2'>Click Photo to Update</span>
+            </div>
+
             <ul>
             {Object.values(marina).map((marina)=>{
                 return(
-                    <li key={marina.id}>
-                        <h2>{marina.name}</h2>
-                        <p>{marina.cost} per foot</p>
-                        <img src={marina.imgUrl} alt='marina'/>
+                    <li key={marina.id} >
+                        <h2>{marina.name}  -  ${marina.cost} / foot</h2>
+
+                        <NavLink to={'/marinas/${marina.id}'}>
+                        <img src={marina.imgUrl} alt='marina' onClick={"/"} />
+                        </NavLink>
+
+                        <div className='description'>{marina.description}</div>
                     </li>
                 )
             })}
