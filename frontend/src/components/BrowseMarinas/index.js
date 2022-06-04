@@ -1,6 +1,6 @@
 import { useEffect  } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink, useHistory } from 'react-router-dom';
+import { NavLink, Link, useHistory } from 'react-router-dom';
 // eslint-disable-next-line
 import { getMarinas, deleteMarina } from '../../store/marinaReducer';
 import './BrowseMarinas.css';
@@ -42,10 +42,16 @@ const BrowseMarinas = () => {
                                 <div className='marina_cost'>${marina.cost}/gallon</div>
                                 <div className='marina_coord'>latitude: {marina.lat}</div>
                                 <div className='marina_coord'>longitude: {marina.lng}</div>
+                                <Link  to={`/marinas/${marina.id}`}>
+                                    <img className='imgMarina' src={marina.imgUrl} alt='marina' />
+                                </Link>
+
                             </div>
+
+{/*
                             <NavLink  to={`/marinas/${marina.id}`}>
-                                <img src={marina.imgUrl} alt='marina' />
-                            </NavLink>
+                                <img className='imgMarina' src={marina.imgUrl} alt='marina' />
+                            </NavLink> */}
 
                             <div className='description'>{marina.description}</div>
 

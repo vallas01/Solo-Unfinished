@@ -8,12 +8,14 @@
 .img-container {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .img-sail {
     height: 335px;
     width: 570px;
-    margin-right: 120px;
+    border: 1px solid black;
+    border-radius: 25px;
 }
 .Title {
     margin-top: 10%;
