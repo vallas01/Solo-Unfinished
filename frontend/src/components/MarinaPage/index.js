@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './MarinaPage.css';
+import '../button.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { getMarinas, updateMarinaDetails } from '../../store/marinaReducer'

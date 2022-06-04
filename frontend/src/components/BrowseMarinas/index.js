@@ -4,6 +4,7 @@ import { NavLink, useHistory } from 'react-router-dom';
 // eslint-disable-next-line
 import { getMarinas, deleteMarina } from '../../store/marinaReducer';
 import './BrowseMarinas.css';
+import '../button.css';
 
 
 const BrowseMarinas = () => {

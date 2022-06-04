@@ -3,6 +3,8 @@ import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import './LoginForm.css';
+import '../button.css';
+
 
 function LoginFormPage() {
   const dispatch = useDispatch();
@@ -12,7 +14,7 @@ function LoginFormPage() {
   const [errors, setErrors] = useState([]);
 
   if (sessionUser) return (
-    <Redirect to="/" />
+    <Redirect to="/marinas" />
   );
 
   const handleSubmit = (e) => {
@@ -26,7 +28,7 @@ function LoginFormPage() {
   }
 
   const handleDemo = () => {
-    setCredential('Demo-lition');
+    setCredential('DemoUser');
     setPassword('password');
   }
 
