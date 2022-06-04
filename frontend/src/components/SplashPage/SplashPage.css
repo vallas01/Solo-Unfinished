@@ -1,3 +1,20 @@
+.splash-container {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+}
+
+.img-sail {
+    height: 570px;
+    width: 570px;
+    margin-right: 120px;
+}
 .Title {
     margin-top: 10%;
     color: rgb(40, 64, 12);
