@@ -17,37 +17,42 @@ function ReviewPage() {
 
     console.log("Hello FROM ReviewPage")
 
+
+
+
     useEffect(() => {
-        dispatch(getReviews());
+      dispatch(getReviews());
     }, [dispatch])
 
-// eslint-disable-next-line
+    // eslint-disable-next-line
     const [userId, setUserId] = useState('');
-// eslint-disable-next-line
+    // eslint-disable-next-line
     const [businessId, setBusinessId] = useState('');
-// eslint-disable-next-line
+    // eslint-disable-next-line
     const [rating, setRating] = useState('');
-// eslint-disable-next-line
+    // eslint-disable-next-line
     const [content, setContent] = useState('');
 
+
     const handleSubmit = async (e) => {
-        e.preventDefault();
+      e.preventDefault();
 
-        const payload = {
-            id: review.id,
-            userId: review.userId,
-            businessId: review.businessId,
-            rating,
-            content : review.content,
-        };
-
-        let editedReview = dispatch(updateReviewDetails(payload))
-
-        if (editedReview) {
-          // history.push(`/reviews/${editedReview.id}`);
-          history.push(`/reviews`);
-        }
+      const payload = {
+        id: review.id,
+        userId: review.userId,
+        businessId: review.businessId,
+        rating,
+        content : review.content,
       };
+
+      let editedReview = dispatch(updateReviewDetails(payload))
+
+
+      if (editedReview) {
+        // history.push(`/reviews/${editedReview.id}`);
+        history.push(`/marinas`);
+      }
+    };
 
     return (
 
@@ -61,12 +66,15 @@ function ReviewPage() {
               <input
                 type="integer"
                 name='rating'
+                min='1'
+                max='5'
                 required
                 value={rating}
                 onChange={(e) => setRating(e.target.value)}
               />
 
             </label>
+
 
             <button className='edit-rating-btn' type="submit">Edit Stars</button>
           </form>

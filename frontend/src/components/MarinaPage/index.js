@@ -87,7 +87,7 @@ function MarinaPage() {
           <div className='containerEdit'>
 
             <form className='edit-form' onSubmit={handleSubmit}>
-              <h2>Update the Slip Cost per Foot</h2>
+              <h2>Update The Fuel Cost</h2>
             {/* <input
               type="hidden"
               min="1"
