@@ -28,6 +28,7 @@ function ReviewPage() {
     const [rating, setRating] = useState('');
 // eslint-disable-next-line
     const [content, setContent] = useState('');
+    const [errors, setErrors] = useState([]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -48,12 +49,26 @@ function ReviewPage() {
         }
       };
 
+      useEffect(() =>{
+        const errors = [];
+        if (rating < 0 || rating > 5) errors.push("Ratings must be between 1 and 5");
+        setErrors(errors);
+      },[rating]);
+
     return (
 
         <div className='containerEdit'>
 
           <form className='editRating-form' onSubmit={handleSubmit}>
             <h2>Update the Star Rating</h2>
+
+            <ul className='errors'>
+              {errors.map(error=> (
+                <li key={error}>
+                  {error}
+                </li>
+              ))}
+            </ul>
 
             <label>
 
