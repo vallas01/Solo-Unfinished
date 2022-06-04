@@ -12,8 +12,10 @@ function Navigation({ isLoaded }){
   if (sessionUser) {
     sessionLinks = (
       <>
-        <ProfileButton user={sessionUser} />
+        <NavLink className='marina-btn' to="/marinas">Marinas</NavLink>
         <NavLink className='marina-btn' to="/new">Add</NavLink>
+        <ProfileButton user={sessionUser} />
+
       </>
     );
   } else {
@@ -32,12 +34,10 @@ function Navigation({ isLoaded }){
   return (
     <div className='btn-container'>
 
-      {/* <ul>
-        <li> */}
+
           <NavLink className='login-btn' exact to="/">Home</NavLink>
           {isLoaded && sessionLinks}
-        {/* </li>
-      </ul> */}
+
     </div>
   );
 }

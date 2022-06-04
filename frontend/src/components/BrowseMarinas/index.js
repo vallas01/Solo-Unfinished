@@ -30,15 +30,19 @@ const BrowseMarinas = () => {
         <div>
             <div className='listContainer'>
                 <span className='span1'>MARINA LIST</span>
-                <span className='span2'>Click Photo to Update</span>
+                <span className='span2'>Click Photo to Update Most Recent Fuel Price</span>
             </div>
                 <ul>
                 {Object.values(marina).map((marina)=>{
                     return(
                         <div className='marina_container'>
                         <li key={marina.id} >
-                            <h2>{marina.name}  -  ${marina.cost} / foot</h2>
-
+                            <div className='info_container'>
+                                <div className='marina_name'>{marina.name}</div>
+                                <div className='marina_cost'>${marina.cost}/gallon</div>
+                                <div className='marina_coord'>latitude: {marina.lat}</div>
+                                <div className='marina_coord'>longitude: {marina.lng}</div>
+                            </div>
                             <NavLink  to={`/marinas/${marina.id}`}>
                                 <img src={marina.imgUrl} alt='marina' />
                             </NavLink>

@@ -14,7 +14,7 @@ button {
     letter-spacing: 1px;
 }
 
-.signup-btn {
+.signup-btn, .logout-btn {
     height: 40px;
     width: 80px;
     background-color: rgb(244, 57, 57);
@@ -31,21 +31,6 @@ button {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.logout-btn {
-    height: 40px;
-    width: 90px;
-    margin-left: 20px;
-    border: 1px solid rgb(187, 186, 192);
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    text-decoration: none;
-    color: rgb(43, 39, 60);
-    transition: 0.5s;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
 
 .login-btn:hover, .marina-btn:hover, .logout-btn:hover {
     background-color: rgba(0,0,0,0.12);
@@ -53,7 +38,7 @@ button {
 }
 
 
-.login-btn, .marina-btn, .logout-btn {
+.login-btn, .marina-btn {
     height: 40px;
     width: 80px;
     margin-left: 20px;
