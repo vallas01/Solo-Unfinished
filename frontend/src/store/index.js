@@ -4,11 +4,30 @@ import sessionReducer from './session';
 import marinaReducer from "./marinaReducer";
 import reviewReducer from "./reviewReducer";
 
-const rootReducer = combineReducers({
+//ORIGINAL CODE *********
+// const rootReducer = combineReducers({
+//   session: sessionReducer,
+//   marina: marinaReducer,
+//   review: reviewReducer,
+// });
+
+//NEW CODE ******
+const appReducer = combineReducers({
   session: sessionReducer,
   marina: marinaReducer,
   review: reviewReducer,
-});
+})
+
+const rootReducer = (state, action) => {
+  if (action.type === 'REMOVE_USER') {
+    const { routing } = state
+    state = { routing } 
+  }
+
+  return appReducer(state, action)
+}
+//****************/
+
 
 let enhancer;
 
