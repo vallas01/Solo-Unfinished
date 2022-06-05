@@ -51,7 +51,6 @@ module.exports = (sequelize, DataTypes) => {
     // associations can be defined here
     User.hasMany(models.Business, { foreignKey: 'ownerId' });
     User.hasMany(models.Review, { foreignKey: 'userId' });
-
   };
 
   User.prototype.toSafeObject = function() { // remember, this cannot be an arrow function
@@ -59,15 +58,17 @@ module.exports = (sequelize, DataTypes) => {
     return { id, username, email };
   };
 
+
   User.prototype.validatePassword = function (password) {
     return bcrypt.compareSync(password, this.hashedPassword.toString());
    };
 
-   User.getCurrentUserById = async function (id) {
-    return await User.scope('currentUser').findByPk(id);
-   };
 
-   User.login = async function ({ credential, password }) {
+  User.getCurrentUserById = async function (id) {
+    return await User.scope('currentUser').findByPk(id);
+  };
+
+  User.login = async function ({ credential, password }) {
     const { Op } = require('sequelize');
     const user = await User.scope('loginUser').findOne({
       where: {

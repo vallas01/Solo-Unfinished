@@ -8,6 +8,19 @@ const { User, Business, Review } = require('../../db/models');
 
 const router = express.Router();
 
+const validateMarinaForm = [
+    check('name')
+      .exists({ checkFalsy: true })
+      .notEmpty()
+      .isLength({min: 4})
+      .withMessage('Please provide a longer name.'),
+    check('state')
+      .exists({ checkFalsy: true })
+      .notEmpty()
+      .isLength({min: 4})
+      .withMessage('Please provide a full state name.'),
+    handleValidationErrors,
+  ];
 
 //get all marinas
 router.get('/', asyncHandler(async function(req, res) {
@@ -16,7 +29,7 @@ router.get('/', asyncHandler(async function(req, res) {
 }));
 
 // create a marina
-router.post('/', asyncHandler(async function(req, res) {
+router.post('/', validateMarinaForm, asyncHandler(async function(req, res) {
     const newMarina = await Business.create(req.body);
     return res.json(newMarina)
 }));
