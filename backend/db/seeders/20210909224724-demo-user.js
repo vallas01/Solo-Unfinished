@@ -1,5 +1,5 @@
 'use strict';
-const faker = require('faker');
+// const faker = require('faker');
 const bcrypt = require('bcryptjs');
 
 module.exports = {
@@ -11,49 +11,49 @@ module.exports = {
         hashedPassword: bcrypt.hashSync('password'),
       },
       {
-        email: faker.internet.email(),
+        email: 'fake1@user.io',
         username: 'FakeUser1',
-        hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        hashedPassword: bcrypt.hashSync('password'),
       },
       {
-        email: faker.internet.email(),
+        email: 'fake2@user.io',
         username: 'FakeUser2',
-        hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        hashedPassword: bcrypt.hashSync('password'),
       },
       {
-        email: faker.internet.email(),
+        email: 'fake3@user.io',
         username: 'FakeUser3',
-        hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        hashedPassword: bcrypt.hashSync('password'),
       },
       {
-        email: faker.internet.email(),
+        email: 'fake4@user.io',
         username: 'FakeUser4',
-        hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        hashedPassword: bcrypt.hashSync('password'),
       },
       {
-        email: faker.internet.email(),
+        email: 'fake5@user.io',
         username: 'FakeUser5',
-        hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        hashedPassword: bcrypt.hashSync('password'),
       },
       {
-        email: faker.internet.email(),
+        email: 'fake6@user.io',
         username: 'FakeUser6',
-        hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        hashedPassword: bcrypt.hashSync('password'),
       },
       {
-        email: faker.internet.email(),
+        email: 'fake7@user.io',
         username: 'FakeUser7',
-        hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        hashedPassword: bcrypt.hashSync('password'),
       },
       {
-        email: faker.internet.email(),
+        email: 'fake8@user.io',
         username: 'FakeUser8',
-        hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        hashedPassword: bcrypt.hashSync('password'),
       },
       {
-        email: faker.internet.email(),
+        email: 'fake9@user.io',
         username: 'FakeUser9',
-        hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        hashedPassword: bcrypt.hashSync('password'),
       },
     ], {});
   },
