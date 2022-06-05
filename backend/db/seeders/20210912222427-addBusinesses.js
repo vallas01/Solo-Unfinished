@@ -22,10 +22,10 @@ module.exports = {
        createdAt: new Date(),
        updatedAt: new Date()
       },
-     {ownerId: 1, name: 'The Yacht Club of Hilton Head',
+     {ownerId: 2, name: 'The Yacht Club of Hilton Head',
      imgUrl: 'https://upscalelivingmag-com-images.s3.us-east-1.amazonaws.com/wp-content/uploads/2021/03/sailboat-racing.jpg',
       cost: 2.25, description: 'Beautiful', address: '99 Helmsman Way', city: 'Hilton Head Island', state: 'SC', country: 'USA', lat: 43.8210, lng: -89.0214, createdAt: new Date(), updatedAt: new Date()},
-     {ownerId: 1, name: 'Delray Harbour Club Marina',
+     {ownerId: 3, name: 'Delray Harbour Club Marina',
      imgUrl:  'https://img.marinas.com/v2/865482a619e67f4c67041997880ad09fb363febcec073c0c1899e457aaa7029d.jpg',
       cost: 2.35, description: 'Right on the Intercoastal', address: '1035 S. Federal Highway', city: 'Delray Beach', state: 'FL', country: 'USA', lat: 43.1023, lng: -89.2301, createdAt: new Date(), updatedAt: new Date()},
      {ownerId: 4, name: 'Bonefish Marina',
