@@ -1,9 +1,9 @@
 'use strict';
-// const faker = require('faker');
-const bcrypt = require('bcryptjs');
+// const faker = require('faker',123);
+const bcrypt = require('bcryptjs',123);
 
 module.exports = {
-  up: (queryInterface, Sequelize) => {
+  up: async (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Users', [
       {
         email: 'demo@user.io',

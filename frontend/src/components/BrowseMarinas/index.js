@@ -48,11 +48,6 @@ const BrowseMarinas = () => {
 
                             </div>
 
-{/*
-                            <NavLink  to={`/marinas/${marina.id}`}>
-                                <img className='imgMarina' src={marina.imgUrl} alt='marina' />
-                            </NavLink> */}
-
                             <div className='description'>{marina.description}</div>
 
                             <NavLink to='/reviews'>

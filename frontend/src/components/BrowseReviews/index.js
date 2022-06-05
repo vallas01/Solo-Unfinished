@@ -16,7 +16,6 @@ const BrowseReviews = () => {
     });
 
     const deleteThisReview = (id) => {
-        // e.preventDefault();
         dispatch(deleteReview(id));
         history.push(`/reviews`);
     }
