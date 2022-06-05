@@ -42,6 +42,7 @@ function LoginFormPage() {
           Username or Email
           <input
             type="text"
+            placeholder=''
             value={credential}
             onChange={(e) => setCredential(e.target.value)}
             required
@@ -51,6 +52,7 @@ function LoginFormPage() {
           Password
           <input
             type="password"
+            placeholder=''
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
