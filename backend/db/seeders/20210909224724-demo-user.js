@@ -1,6 +1,5 @@
 'use strict';
-// const faker = require('faker',123);
-const bcrypt = require('bcryptjs',123);
+const bcrypt = require('bcryptjs');
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
