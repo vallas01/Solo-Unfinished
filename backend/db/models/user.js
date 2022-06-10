@@ -74,7 +74,7 @@ module.exports = (sequelize, DataTypes) => {
       where: {
         [Op.or]: {
           username: credential,
-          email: credential,
+          email: credential
         },
       },
     });
@@ -88,7 +88,7 @@ module.exports = (sequelize, DataTypes) => {
     const user = await User.create({
       username,
       email,
-      hashedPassword,
+      hashedPassword
     });
     return await User.scope('currentUser').findByPk(user.id);
   };

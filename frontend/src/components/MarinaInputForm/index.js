@@ -23,6 +23,7 @@ function MarinaInputForm() {
   const [country, setCountry] = useState('');
   const [lat, setLat] = useState('');
   const [lng, setLng] = useState('');
+  const [errors, setErrors] = useState([]);
 
   const dispatch = useDispatch();
 
@@ -47,14 +48,20 @@ function MarinaInputForm() {
         lat,
         lng,
     };
-    let doneMarina = dispatch(createMarina(newMarina));
+    dispatch(createMarina(newMarina))
+        .then(()=>history.push(`/marinas`))
+        .catch(async (res) => {
+            const data = await res.json();
+            if (data && data.errors) setErrors(data.errors)
+        })
 
     reset();
 
-    if (doneMarina) {
-        // history.push(`/marinas/${editedMarina.id}`);
-        history.push(`/marinas`);
-    }
+    // // if (doneMarina) {
+    // //     // history.push(`/marinas/${editedMarina.id}`);
+    // //     history.push(`/marinas`);
+    // }
+    
   };
 
   const reset = () => {
@@ -75,6 +82,11 @@ function MarinaInputForm() {
   return (
     <div className='container'>
         <form onSubmit={handleSubmit}>
+                {errors.length > 0 &&
+                    <ul>
+                        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+                    </ul>
+                }
         <div className='inputform'>
             <div className='MarinaHeader'>
                 Add a Marina
