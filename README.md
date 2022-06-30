@@ -1,11 +1,6 @@
 # MarinaLiving
 
-<p align="center">
-"Hipdock Live Link"  
-</p>
-<p align="center">
-https://Hipdock.herokuapp.com
-</p>
+
 
 
 <!-- Backend is setup -->
