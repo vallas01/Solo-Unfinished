@@ -1,7 +1,8 @@
 # MarinaLiving
 
 <p align="center">
-("Hipdock Live Link" [https://Hipdock.herokuapp.com] )
+"Hipdock Live Link"  
+  https://Hipdock.herokuapp.com
 </p>
 
 
