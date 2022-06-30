@@ -2,7 +2,9 @@
 
 <p align="center">
 "Hipdock Live Link"  
-  https://Hipdock.herokuapp.com
+</p>
+<p align="center">
+https://Hipdock.herokuapp.com
 </p>
 
 
